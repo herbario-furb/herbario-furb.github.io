@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laboratorio Multiusuario Herbario FURB</title>
+<meta name="description" content="Laboratorio Multiusuario Herbario FURB: grupo de investigación en sistemática de licófitas y helechos, ecología de bosques tropicales y colecciones biológicas, y la colección del Herbario Dr. Roberto Miguel Klein (FURB, Blumenau, Brasil).">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="alternate" hreflang="pt-BR" href="https://herbario-furb.github.io/">
+<link rel="alternate" hreflang="en" href="https://herbario-furb.github.io/en.html">
+<link rel="alternate" hreflang="es" href="https://herbario-furb.github.io/es.html">
+<link rel="alternate" hreflang="x-default" href="https://herbario-furb.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Laboratorio Multiusuario Herbario FURB">
+<meta property="og:title" content="Laboratorio Multiusuario Herbario FURB">
+<meta property="og:description" content="Grupo de investigación y colección botánica de la Universidad Regional de Blumenau: helechos, bosques tropicales y colecciones biológicas.">
+<meta property="og:image" content="https://herbario-furb.github.io/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* VOICE acadêmico e calmo: grupo de pesquisa e coleção científica
+   IDEA a exsicata: folha de herbário com etiqueta; o logo do Herbário ocupa esse lugar quando o arquivo existir
+   PICTURE logo do Herbário (img/logo.png) ou, na falta dele, uma samambaia montada com etiqueta
+   COLOUR verde-floresta profundo, papel branco, verde-broto como acento
+   TYPE Fraunces (títulos) + Public Sans (texto)
+   LAYOUT laptop: título e ações sobre o verde, imagem à direita; celular: título, imagem, botões */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0d1712);--ink:light-dark(#14201a,#e6efe9);--muted:light-dark(#4b5c53,#a9bbb1);--deep:#0f3a28;--deep2:#0a2b1d;--leaf:light-dark(#2f7a4f,#b5e07a);--sprout:#b5e07a;--line:light-dark(#d7e2dc,#24362d);--panel:light-dark(#f2f7f4,#13211a)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Public Sans",system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+img{max-width:100%}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:700;line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h2{font-size:clamp(30px,4vw,44px);margin-bottom:14px}
+h3{font-size:20px;font-weight:500}
+p{margin:0 0 12px;max-width:68ch}
+.band{padding-block:clamp(36px,5vw,72px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.lead{font-size:17px;color:var(--muted)}
+nav{position:sticky;top:0;z-index:5;background:var(--deep2);color:#fff;padding-inline:max(5vw,16px)}
+nav .wrap{display:flex;align-items:center;gap:20px;min-height:60px;flex-wrap:wrap}
+.brand{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:18px;text-decoration:none}
+.links{display:flex;gap:4px;overflow-x:auto;margin-left:auto;scrollbar-width:none}
+.links a{flex:none;text-decoration:none;padding:10px 12px;border-radius:8px;font-size:15px;color:#d9eadf}
+.links a:hover,.links a:focus-visible{background:#ffffff1a;color:#fff}
+.hero{background:var(--deep);color:#fff}
+.hero .top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,64px);align-items:center}
+.hero h1{font-size:clamp(36px,5vw,60px);margin-bottom:18px}
+.hero p{color:#cfe3d6;font-size:18px}
+.hero .sub{font:500 clamp(22px,2.4vw,28px)/1.2 Fraunces,Georgia,serif;color:var(--sprout);margin-bottom:16px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--sprout);outline-offset:2px}
+.b1{background:var(--sprout);color:#0a2b1d}
+.b2{border-color:#ffffff66;color:#fff}
+.pic{position:relative}
+.logo{display:block;margin:auto;text-align:center}
+.logo img{width:auto;height:clamp(260px,34vw,440px);max-width:100%;object-fit:contain}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(10em,1fr));gap:1px;background:#ffffff2a;margin-top:clamp(28px,4vw,48px);border-top:1px solid #ffffff2a}
+.facts div{background:var(--deep);padding:18px 18px 4px}
+.facts div:first-child{padding-left:0}
+.facts b{display:block;font-family:Fraunces,Georgia,serif;font-size:clamp(28px,3vw,38px);color:var(--sprout);white-space:nowrap}
+.facts span{color:#cfe3d6;font-size:15px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16em),1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.card p{color:var(--muted);margin:0}
+.card .when{margin-top:auto;padding-top:8px;white-space:normal}
+.tag{align-self:flex-start}
+.card a.go{margin-top:auto;font-weight:700;color:var(--leaf);text-decoration:none;padding-top:8px}
+.ico{width:40px;height:40px;border-radius:10px;background:var(--deep);display:grid;place-items:center}
+.ico svg{width:22px;height:22px;stroke:var(--sprout);fill:none;stroke-width:1.8}
+ul.list{margin:0;padding:0;list-style:none}
+ul.list li{padding:12px 0;border-bottom:1px solid var(--line)}
+ul.list li:last-child{border-bottom:0}
+ul.list p{color:var(--muted);margin:4px 0 0}
+.tag{display:inline-block;font-size:13px;font-weight:700;padding:2px 10px;border-radius:99px;background:var(--sprout);color:#0a2b1d;margin-bottom:6px}
+.tag.off{background:var(--line);color:var(--muted)}
+.alt{background:var(--panel)}
+.alt .card{background:var(--bg)}
+.curator{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center;background:var(--deep);color:#fff;border-radius:16px;padding:24px;margin-bottom:8px}
+.curator p{color:#cfe3d6;margin:0}
+.mono{width:132px;height:132px;border-radius:50%;background:var(--sprout);color:#0a2b1d;display:grid;place-items:center;font:700 30px Fraunces,Georgia,serif;overflow:hidden;position:relative}
+.mono img,.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips a{font-size:14px;padding:6px 12px;border:1px solid var(--line);border-radius:99px;text-decoration:none}
+.curator .chips a{border-color:#ffffff55;color:#fff}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17em),1fr));gap:0 28px}
+.team h3{grid-column:1/-1;margin:22px 0 4px;font-size:19px}
+.person{padding:12px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:80px minmax(0,1fr);gap:16px;align-items:center}
+.av{width:80px;height:80px;border-radius:50%;background:var(--deep);color:var(--sprout);display:grid;place-items:center;font:700 20px Fraunces,Georgia,serif;overflow:hidden;position:relative}
+.person a{font-weight:600;text-decoration:none}
+.person a:hover{text-decoration:underline}
+.person small{display:block;color:var(--muted);font-size:14px}
+.person .pn{font-weight:600;display:block}
+.pbt{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.pbt a{font-size:13px;font-weight:600;padding:3px 11px;border:1px solid var(--line);border-radius:99px;text-decoration:none;color:var(--leaf)}.pbt a:hover{background:var(--leaf);color:#fff;text-decoration:none}
+.refs{margin:0;padding:0;list-style:none}
+.refs li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.refs a{color:var(--leaf);overflow-wrap:anywhere;text-decoration:none;font-weight:600}
+.refs a:hover{text-decoration:underline}
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;padding:14px 0;font:700 19px Fraunces,Georgia,serif;list-style-position:outside}
+summary small{font:400 14px "Public Sans",sans-serif;color:var(--muted);margin-left:8px}
+.when{color:var(--muted);font-size:14px;white-space:nowrap}
+.allpubs{display:flex;flex-wrap:wrap;gap:16px 40px;align-items:center;justify-content:space-between;margin-top:36px;padding:24px;border-radius:14px;background:var(--panel);border:1px solid var(--line)}
+.allpubs p{margin:4px 0 0;color:var(--muted)}
+.allpubs .chips{margin:0}
+.allpubs .chips a{font-weight:700;color:var(--leaf);padding:10px 16px}
+.redes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:20px 40px;align-items:center;margin-top:32px;padding:24px;border-radius:14px;background:var(--deep);color:#fff}
+.redes p{color:#cfe3d6;margin:6px 0 0}
+.rl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media(max-width:600px){.rl{grid-template-columns:minmax(0,1fr)}}
+.rl a{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border-radius:10px;background:#ffffff14;border:1px solid #ffffff33;text-decoration:none;color:#fff;transition:background .15s}
+.rl a:hover{background:#ffffff26}
+.rl b{color:var(--sprout);font-size:18px}
+.rl span{font-size:14px;color:#cfe3d6}
+@media(max-width:860px){.redes{grid-template-columns:minmax(0,1fr)}}
+.contact{background:var(--deep2);color:#fff}
+.contact p,.contact dd{color:#cfe3d6}
+dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px 20px;margin:0}
+dt{font-weight:700}
+dd{margin:0}
+.apoio{background:#fff;color:#14201a;border-top:1px solid #d7e2dc}
+.logos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 40px;align-items:center;margin-top:24px}
+@media(max-width:700px){.logos{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}}
+.banner{display:block;width:100%;max-width:1100px;height:auto;margin:18px 0 8px}
+.logo-i{height:84px;display:grid;place-items:center;text-align:center;font-weight:700;font-size:14px;color:#0f3a28;border:1px dashed #c9d6ce;border-radius:10px;padding:6px}
+.logo-i.ok{border:0}
+.logo-i.ok span{display:none}
+.logo-i img{max-height:76px;max-width:100%;object-fit:contain}
+footer{background:var(--deep2);color:#a9c2b3;font-size:14px;border-top:1px solid #ffffff1f;padding:22px max(5vw,16px)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media(max-width:860px){.hero .top,.two{grid-template-columns:minmax(0,1fr)}.hero .pic{max-width:460px}}
+@media(max-width:600px){.links{width:100%;margin-left:0}.curator{grid-template-columns:minmax(0,1fr)}dl{grid-template-columns:minmax(0,1fr)}dt{margin-top:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+/* Proposta 2: grupo em verde-floresta, coleção em âmbar e papel de herbário */
+.links{align-items:center}
+.links .sep{flex:none;width:1px;height:22px;background:#ffffff33;margin:0 6px}
+.links a.ng{color:#b5e07a;font-weight:700}
+.links a.nc{color:#f2b544;font-weight:700}
+.doors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:clamp(28px,4vw,44px)}
+.door{display:flex;flex-direction:column;gap:6px;padding:22px 24px;border-radius:16px;text-decoration:none;transition:transform .15s}
+.door:hover{transform:translateY(-3px)}
+.dg{background:#165036;color:#fff;border:1px solid #ffffff26}
+.dc{background:#f2b544;color:#2a1c08}
+.dk{font:700 13px "Public Sans",sans-serif;opacity:.85}
+.dt{font:700 clamp(20px,2.2vw,26px)/1.15 Fraunces,Georgia,serif}
+.dn{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:10px}
+.dn>span{display:flex;flex-direction:column;font-size:14px}
+.dn b{font:700 clamp(24px,2.6vw,32px) Fraunces,Georgia,serif;white-space:nowrap}
+.dg .dn b{color:#b5e07a}
+.dgo{margin-top:8px;font-weight:700;font-size:15px}
+.part{padding:clamp(28px,4vw,52px) max(5vw,16px)}
+.part .wrap{display:grid;gap:6px}
+.part h2{font-size:clamp(34px,4.6vw,54px);margin:0}
+.part p{margin:0;font-size:17px}
+.pk{font-weight:700;font-size:14px}
+.pg{background:#165036;color:#fff}.pg .pk{color:#b5e07a}.pg p{color:#cfe3d6}
+.pc{background:#f2b544;color:#2a1c08}.pc p{color:#4a3413}
+.col{--bg:light-dark(#fbf6ea,#1b160e);--panel:light-dark(#f4ead3,#241d12);--deep:#5b3a10;--sprout:#f2b544;--leaf:light-dark(#9a5a0e,#f2b544);--line:light-dark(#e4d4b0,#3b2f1d);--muted:light-dark(#5e4e36,#c9b896);background:var(--bg)}
+.col .alt .card{background:light-dark(#fffdf7,#1b160e)}
+.col .ico{background:#5b3a10}
+.col .ico svg{stroke:#f2b544}
+.col .redes{background:#3d2709}
+.col .redes p,.col .rl span{color:#ecdcb8}
+.col .rl b{color:#f2b544}
+.col a{color:var(--leaf)}
+.col .rl a{color:#fff}
+.cbox{padding:22px;border-radius:14px;background:#ffffff10;border:1px solid #ffffff26}
+.cbox h3{margin-bottom:6px}
+@media(max-width:760px){.doors{grid-template-columns:minmax(0,1fr)}}
+
+/* v3 */
+.links a.lang{border:1px solid #ffffff55;margin-left:6px;font-weight:700}
+.news{background:var(--panel)}
+.nl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+.nl article{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:6px}
+.nl h3{font-size:19px}
+.nl p{margin:0;color:var(--muted);font-size:15px}
+.nl a{margin-top:auto;padding-top:6px;font-weight:700;color:var(--leaf);text-decoration:none}
+.nd{font-weight:700;font-size:13px;color:var(--leaf)}
+.intro2 .lead{max-width:80ch}
+.rq .q{font:500 18px/1.35 Fraunces,Georgia,serif;color:var(--ink)}
+.kp{font-weight:700;font-size:13px;color:var(--leaf);margin-top:6px}
+.kpl{margin:0;padding:0;list-style:none;font-size:14px;color:var(--muted)}
+.kpl li{padding:3px 0}
+.kpl a{color:var(--leaf);font-weight:700;text-decoration:none}
+.net{margin-top:22px;padding:18px 20px;border-radius:14px;border:1px dashed var(--line)}
+.net p{margin:4px 0 0;color:var(--muted)}
+.person .tp{display:block;font-size:14px;color:var(--ink);margin-top:2px;line-height:1.35}
+.alum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:18px}
+.alum ul{margin:8px 0 0;padding:0;list-style:none}
+.alum li{padding:5px 0;border-bottom:1px solid var(--line);font-size:15px}
+.alum li span{color:var(--muted);font-size:13px;white-space:nowrap}
+.repos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+.repos a{display:flex;flex-direction:column;gap:4px;padding:16px 18px;border-radius:12px;background:var(--bg);border:1px solid var(--line);text-decoration:none}
+.repos b{color:var(--leaf);font-size:16px}
+.repos span{font-size:14px;color:var(--muted)}
+.repos.one{grid-template-columns:minmax(0,1fr);max-width:640px}
+.repos em{font-style:normal;font-size:12px;font-weight:700;color:var(--muted);margin-top:auto}
+.more{font-weight:700;color:var(--leaf)}
+.howto{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;margin-top:22px;padding:22px 24px;border-radius:14px;background:#165036;color:#fff}
+.howto p{color:#cfe3d6;margin:6px 0 0}
+@media(max-width:980px){.nl,.repos{grid-template-columns:repeat(2,minmax(0,1fr))}.alum{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.nl,.repos,.alum{grid-template-columns:minmax(0,1fr)}}
+
+.links a.lang{display:inline-flex;align-items:center;gap:8px}
+.flag{width:24px;height:16px;border-radius:2px;box-shadow:0 0 0 1px #ffffff55;flex:none}
+.langbar{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:8px 14px;border-radius:99px;border:1px solid #ffffff44;color:#fff;text-decoration:none;font-weight:700;font-size:15px}
+.langbar:hover{background:#ffffff1a}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.langs .langbar{margin-top:0}
+.links a.lang+a.lang{margin-left:4px}
+footer a.flg{display:inline-flex;align-items:center;gap:6px;color:inherit}
+
+.ph{background:linear-gradient(90deg,#0d3a26f2 0%,#0d3a26cc 45%,#0d3a2655 100%),url(img/campo/floresta-xaxins.jpg) center/cover;padding-block:clamp(56px,8vw,110px)}
+.rqimg{display:block;max-width:none;width:calc(100% + 44px);margin:-22px -22px 6px;height:170px;object-fit:cover;border-radius:14px 14px 0 0}
+.rq{overflow:hidden}
+.jtop{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center}
+.jtop img,.jvid video{width:100%;height:230px;object-fit:cover;border-radius:14px;display:block;background:#0d3a26}
+.jvid{margin:0}.jvid figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.photoband{height:clamp(220px,32vw,380px);background:url(img/campo/araucarias.jpg) center 40%/cover;position:relative}
+.photoband span{position:absolute;right:max(5vw,16px);bottom:14px;color:#fff;font-size:13px;opacity:.85}
+@media(max-width:760px){.jtop{grid-template-columns:minmax(0,1fr)}.jtop img,.jvid video{height:200px}}
+.acvimg{display:block;width:100%;height:280px;object-fit:cover;object-position:center 60%;border-radius:14px;margin-top:10px}
+.eqimgs{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#fff;border-radius:10px;padding:8px;margin-bottom:4px}
+.eqimgs img{width:100%;height:110px;object-fit:contain}
+</style>
+</head>
+<body>
+<nav aria-label="Principal"><div class="wrap">
+<a class="brand" href="#inicio">Herbario FURB</a>
+<div class="links">
+<a class="ng" href="#grupo">Investigación</a><a href="#projetos">Proyectos</a><a href="#equipe">Equipo</a><a href="#publicacoes">Publicaciones</a><a href="#junte-se">Únase</a><span class="sep" aria-hidden="true"></span><a class="nc" href="#colecao">Colección</a><a href="#servicos">Servicios</a><span class="sep" aria-hidden="true"></span><a href="#contato">Contacto</a><a class="lang" title="Versão em português" href="index.html" hreflang="pt-BR" lang="pt-BR"><svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" fill="#009c3b"/><path d="M14 2.5 25.5 10 14 17.5 2.5 10z" fill="#ffdf00"/><circle cx="14" cy="10" r="4.6" fill="#002776"/><path d="M9.6 9.2c3-.9 6.2-.6 8.8.9" stroke="#fff" stroke-width=".9" fill="none"/></svg><span>PT</span></a><a class="lang" title="English version" href="en.html" hreflang="en" lang="en"><svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><clipPath id="ukc1"><rect width="60" height="40"/></clipPath><g clip-path="url(#ukc1)"><rect width="60" height="40" fill="#012169"/><path d="M0 0 60 40M60 0 0 40" stroke="#fff" stroke-width="8"/><path d="M0 0 60 40M60 0 0 40" stroke="#c8102e" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="12"/><path d="M30 0v40M0 20h60" stroke="#c8102e" stroke-width="7"/></g></svg><span>EN</span></a>
+</div></div></nav>
+
+<header class="hero band" id="inicio"><div class="wrap top">
+<div>
+<h1>Laboratorio Multiusuario Herbario FURB</h1>
+<p class="sub">Botánica, colecciones y bosques de Santa Catarina</p>
+<p>En la Universidad Regional de Blumenau (FURB), en el sur de Brasil, un mismo espacio reúne dos cosas: la colección botánica del Herbario Dr. Roberto Miguel Klein y el grupo de investigación coordinado por el Prof. André Luís de Gasper, que estudia licófitas, helechos y los bosques de Santa Catarina.</p>
+<div class="ctas">
+<a class="btn b1" href="#grupo">Conozca el grupo</a>
+<a class="btn b2" href="https://furb.jbrj.gov.br/v2/consulta.php" target="_blank" rel="noopener">Consultar la colección</a>
+<a class="btn b2" href="#equipamentos">Reservar equipos</a>
+</div>
+<span class="langs"><a class="langbar" href="index.html" hreflang="pt-BR" lang="pt-BR"><svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" fill="#009c3b"/><path d="M14 2.5 25.5 10 14 17.5 2.5 10z" fill="#ffdf00"/><circle cx="14" cy="10" r="4.6" fill="#002776"/><path d="M9.6 9.2c3-.9 6.2-.6 8.8.9" stroke="#fff" stroke-width=".9" fill="none"/></svg>Versão em português</a><a class="langbar" href="en.html" hreflang="en" lang="en"><svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><clipPath id="ukc2"><rect width="60" height="40"/></clipPath><g clip-path="url(#ukc2)"><rect width="60" height="40" fill="#012169"/><path d="M0 0 60 40M60 0 0 40" stroke="#fff" stroke-width="8"/><path d="M0 0 60 40M60 0 0 40" stroke="#c8102e" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="12"/><path d="M30 0v40M0 20h60" stroke="#c8102e" stroke-width="7"/></g></svg>English version</a></span>
+</div>
+<div class="pic" id="pic">
+<div class="logo"><img src="img/logo-claro.png" alt="Logo del Herbario Dr. Roberto Miguel Klein (FURB)" onload="document.getElementById('pic').classList.add('has-logo')" onerror="this.remove()"></div>
+</div>
+</div>
+<div class="wrap doors">
+<a class="door dg" href="#grupo"><span class="dk">Grupo de investigación</span><span class="dt">Sistemática de helechos y ecología de bosques</span>
+<span class="dn"><span><b>103</b>artículos</span><span><b>73</b>estudiantes dirigidos</span><span><b>9</b>proyectos activos</span></span><span class="dgo">Ver el grupo →</span></a>
+<a class="door dc" href="#colecao"><span class="dk">Colección del Herbario</span><span class="dt">Colección botánica abierta a la investigación y la consulta</span>
+<span class="dn"><span><b id="idade">36 años</b>de historia</span><span><b>85 mil+</b>exsicatas</span><span><b>2014</b>Banco de ADN</span></span><span class="dgo">Ver la colección →</span></a>
+</div>
+</header>
+
+<section class="band news" id="novidades"><div class="wrap">
+<h2>Novedades</h2>
+<div class="nl">
+<article><span class="nd">2026</span><h3>Diversificación de las Gleicheniaceae en las montañas tropicales</h3><p>Artículo en <i>Journal of Biogeography</i> muestra los sistemas montañosos tropicales como cunas de diversificación de los helechos de la familia.</p><a href="https://doi.org/10.1111/jbi.70286" target="_blank" rel="noopener">Leer el artículo →</a></article>
+<article><span class="nd">2026</span><h3>Nueva especie: <i>Parablechnum yariguense</i></h3><p>Helecho endémico de la Serranía de los Yariguíes, en Colombia, descrito en <i>Phytotaxa</i>.</p><a href="https://doi.org/10.11646/phytotaxa.756.2.5" target="_blank" rel="noopener">Leer el artículo →</a></article>
+<article><span class="nd">2026</span><h3>Red para la adaptación climática del Bosque Atlántico</h3><p>Artículo en <i>Perspectives in Ecology and Conservation</i> propone una red de colaboración para entender el potencial de adaptación del <i>hotspot</i>.</p><a href="https://doi.org/10.1016/j.pecon.2026.03.003" target="_blank" rel="noopener">Leer el artículo →</a></article>
+<article><span class="nd">2026</span><h3>Observatorio de la vegetación de Brasil</h3><p>El grupo integra el nuevo proyecto financiado por la FAPESP, que sintetizará datos de biodiversidad y existencias de carbono de la vegetación brasileña.</p></article>
+<article><span class="nd">2026</span><h3>Presidencia de la Sociedad Botánica de Brasil</h3><p>El Prof. André Luís de Gasper fue elegido presidente de la SBB para el período 2027–2030.</p></article>
+<article><span class="nd">2025</span><h3>FlorestaSC en <i>Forest Ecology and Management</i></h3><p>Artículo presenta el enfoque del inventario para monitorear la biodiversidad en bosques hiperdiversos.</p><a href="https://doi.org/10.1016/j.foreco.2025.123204" target="_blank" rel="noopener">Leer el artículo →</a></article>
+</div>
+</div></section>
+<div class="part pg ph" id="grupo"><div class="wrap"><span class="pk">Parte 1</span><h2>Grupo de investigación</h2><p>Coordinado por el Prof. André Luís de Gasper, con estudiantes desde la iniciación científica hasta el posdoctorado.</p></div></div>
+<section class="band" id="pesquisa"><div class="wrap">
+<div class="intro2"><h2>Líneas de investigación</h2>
+<p class="lead">El Bosque Atlántico es uno de los <i>hotspots</i> mundiales de biodiversidad: muy diverso, rico en especies endémicas y reducido a fragmentos. Eso lo convierte en un laboratorio natural para preguntas que valen para los bosques tropicales de todo el mundo.</p></div>
+<div class="grid" style="margin-top:22px"><div class="card rq"><img class="rqimg" src="img/campo/pinas.jpg" alt="Detalle de las pinnas de un helecho" loading="lazy"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21V4M12 7c-3 0-5 1-6 3M12 7c3 0 5 1 6 3M12 11c-3 0-5 1-6 3M12 11c3 0 5 1 6 3M12 15c-2 0-4 1-5 2M12 15c2 0 4 1 5 2"/></svg></div><h3>Sistemática y evolución de licófitas y helechos</h3><p class="q">¿Cómo surgen y cómo se delimitan las especies de helechos, y qué revela su historia evolutiva sobre la diversificación de las plantas en los trópicos?</p><p>Taxonomía integrativa, filogenia, biogeografía y evolución cromosómica, con datos moleculares, morfometría, esporas, citometría de flujo y cariología.</p><span class="kp">Artículos clave</span><ul class="kpl"><li>PPG I 2016, <i>J. Syst. Evol.</i> <a href="https://doi.org/10.1111/jse.12229" target="_blank" rel="noopener">doi</a></li><li>Gasper et al. 2017, <i>Cladistics</i> <a href="https://doi.org/10.1111/cla.12173" target="_blank" rel="noopener">doi</a></li><li>Machado &amp; Gasper 2024, <i>Acta Bot. Bras.</i> <a href="https://doi.org/10.1590/1677-941x-abb-2023-0240" target="_blank" rel="noopener">doi</a></li><li>Lima et al. 2026, <i>J. Biogeogr.</i> <a href="https://doi.org/10.1111/jbi.70286" target="_blank" rel="noopener">doi</a></li></ul></div><div class="card rq"><img class="rqimg" src="img/campo/campos-altitude.jpg" alt="Campos de altura y bosque con araucarias en Urubici, SC" loading="lazy"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 20v-4M17 20v-6M7 16l-4-1 4-9 4 9zM17 14l-4-1 4-8 4 8z"/></svg></div><h3>Ecología de bosques tropicales</h3><p class="q">¿Cómo responden los bosques al clima y a las presiones humanas, y qué significa eso para la biodiversidad y el carbono de los bosques tropicales?</p><p>Estructura, dinámica, mortalidad y atributos funcionales de los árboles, distribución de especies y cambio climático, con los datos de largo plazo del FlorestaSC.</p><span class="kp">Artículos clave</span><ul class="kpl"><li>Gasper et al. 2025, <i>For. Ecol. Manage.</i> <a href="https://doi.org/10.1016/j.foreco.2025.123204" target="_blank" rel="noopener">doi</a></li><li>Lima et al. 2024, <i>Science</i> <a href="https://doi.org/10.1126/science.abq5099" target="_blank" rel="noopener">doi</a></li><li>Gasper et al. 2021, <i>Perspect. Ecol. Conserv.</i> <a href="https://doi.org/10.1016/j.pecon.2021.03.007" target="_blank" rel="noopener">doi</a></li><li>Mo et al. 2023, <i>Nature</i> <a href="https://doi.org/10.1038/s41586-023-06723-z" target="_blank" rel="noopener">doi</a></li></ul></div><div class="card rq"><img class="rqimg" src="img/campo/acervo.jpg" alt="Sala de la colección del Herbario FURB" loading="lazy"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div><h3>Colecciones biológicas</h3><p class="q">¿Cómo transformar las colecciones científicas en datos abiertos y confiables para la investigación y la conservación?</p><p>Curaduría, digitalización, diagnóstico y políticas para las colecciones biológicas brasileñas, a partir de la experiencia del Herbario FURB.</p><span class="kp">Artículos clave</span><ul class="kpl"><li>Gasper et al. 2020, <i>Acta Bot. Bras.</i> <a href="https://doi.org/10.1590/010233062019abb0390" target="_blank" rel="noopener">doi</a></li><li>Gasper et al. 2021, <i>Acta Bot. Bras.</i> <a href="https://doi.org/10.1590/0102-33062020abb0246" target="_blank" rel="noopener">doi</a></li><li>Marinoni, Basílio &amp; Gasper (orgs.) 2024 <a href="https://doi.org/10.7476/9786587590066" target="_blank" rel="noopener">doi</a></li></ul></div></div>
+<div class="net"><span class="kp">Red de colaboración</span><p>Pteridophyte Phylogeny Group (PPG) · Missouri Botanical Garden · Universidad de Cambridge · Global Forest Biodiversity Initiative (GFBI) · sPlot · Flora e Funga do Brasil · socios en Colombia y en toda América Latina</p></div>
+</div></section>
+
+
+<section class="band" id="projetos"><div class="wrap">
+<h2>Proyectos</h2>
+<p class="lead">Proyectos coordinados por el grupo o con participación del equipo.</p>
+<h3 style="margin:22px 0 12px">En curso</h3>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,20em),1fr))">
+<div class="card"><h3>Estudios en Blechnaceae: morfometría y citometría de flujo</h3><p>Morfometría del complejo <i>Parablechnum cordatum</i> y evolución del número cromosómico en Blechnaceae.</p><span class="when">2024–actual · CNPq, Beca de Productividad</span></div>
+<div class="card"><h3>Estudios taxonómicos, biogeográficos y genómicos en Gleicheniaceae</h3><p>Revisión de las especies sudamericanas, primer plastoma completo de <i>Gleichenella</i> y biogeografía global de la familia.</p><span class="when">2025–actual · FAPESC</span></div>
+<div class="card"><h3>Inventario Florístico Forestal de Santa Catarina, 3.er ciclo</h3><p>Continuidad del FlorestaSC para apoyar la gestión pública del territorio de Santa Catarina y la conservación de los recursos naturales.</p><span class="when">2022–actual · Gobierno del Estado de SC</span></div>
+<div class="card"><h3>PRO-BIOTA</h3><p>Central de laboratorios multiusuario para la caracterización y el monitoreo de impactos antropogénicos sobre la biodiversidad.</p><span class="when">2025–actual · FINEP</span></div>
+<div class="card"><h3>Ampliación y mejoras de las colecciones científicas de la FURB</h3><p>Infraestructura física del Herbario FURB, de la Colección de Glomeromycota (CICG) y de la Colección Zoológica.</p><span class="when">2025–actual · FINEP</span></div>
+<div class="card"><h3>Impacto del cambio climático en helechos del Bosque Atlántico subtropical</h3><p>Modelado de distribución, cultivo in vitro y criopreservación de esporas y gametofitos para conservación ex situ.</p><span class="when">2025–actual · FAPESC</span></div>
+<div class="card"><h3>Learning from Forests</h3><p>Impactos climáticos sobre helechos en Santa Catarina y en los Andes colombianos, con educación ambiental para jóvenes.</p><span class="when">2025–actual · FAPESC</span></div>
+<div class="card"><h3>Taxonomía del Futuro</h3><p>Plataforma de identificación botánica por espectroscopía en el infrarrojo cercano (NIR).</p><span class="when">2025–actual · FAPESC</span></div>
+<div class="card"><h3>Observatorio de la vegetación de Brasil</h3><p>Síntesis de datos de biodiversidad y existencias de carbono de la vegetación brasileña en una plataforma en línea.</p><span class="when">2026–actual · FAPESP</span></div>
+</div>
+<h3 style="margin:32px 0 6px">Concluidos recientemente</h3>
+<ul class="refs"><li>Herbario Dr. Roberto Miguel Klein: centro de la biodiversidad de Santa Catarina<br><span class="when">2024–2026 · FAPESC</span></li><li>FlorestaSC: nuevas alianzas para el estudio de los bosques en tiempos de cambio climático (con la Universidad de Cambridge)<br><span class="when">2025–2026 · FAPESC</span></li><li>Modernización del Herbario Dr. Roberto Miguel Klein, conservando la biodiversidad<br><span class="when">2023–2025 · FAPESC</span></li><li>Estudios sistemáticos y biogeográficos de helechos, con énfasis en Blechnaceae<br><span class="when">2021–2024 · CNPq</span></li><li>Revelando la biodiversidad escondida en colecciones científicas<br><span class="when">2021–2024 · FAPESC</span></li><li>Diagnóstico de las colecciones biológicas científicas de Brasil<br><span class="when">2021–2023</span></li></ul>
+</div></section>
+
+<section class="band alt" id="equipe"><div class="wrap">
+<h2>Equipo</h2>
+<div class="curator">
+<div class="mono">AG<img src="img/equipe/andre-luis-de-gasper.jpg" alt="Foto de André Luís de Gasper" onerror="this.remove()"></div>
+<div>
+<h3 style="font-size:24px;margin-bottom:6px">Prof. Dr. André Luís de Gasper</h3>
+<p>Profesor de la FURB, coordinador del grupo y curador del Herbario desde 2012. Becario de productividad del CNPq, trabaja en taxonomía, sistemática y biogeografía de helechos y coordina el Inventario Florístico Forestal de Santa Catarina. Coordinó la Red Brasileña de Herbarios (2014–2023) y es coautor de la clasificación PPG I de licófitas y helechos.</p>
+<div class="chips"><a href="http://lattes.cnpq.br/7964289151492195" target="_blank" rel="noopener">Currículum Lattes</a><a href="https://scholar.google.com.br/citations?user=FPXYzWkAAAAJ&hl=pt-BR" target="_blank" rel="noopener">Google Scholar</a><a href="https://orcid.org/0000-0002-1940-9581" target="_blank" rel="noopener">ORCID</a><a href="https://www.researchgate.net/profile/Andre-De-Gasper" target="_blank" rel="noopener">ResearchGate</a><a href="mailto:algasper@furb.br">algasper@furb.br</a></div>
+</div>
+</div>
+<div class="team" id="team"></div>
+</div></section>
+
+<section class="band" id="ex-integrantes"><div class="wrap">
+<h2>Exintegrantes</h2>
+<p class="lead">Estudiantes de posgrado e investigadores posdoctorales que se formaron en el grupo. Quienes siguen con nosotros en otra etapa aparecen en el equipo actual.</p>
+<div class="alum"><div><h3>Posdoctorado</h3><ul><li>Lucas Vieira Lima <span>2025</span></li><li>Amabily Bohn <span>2025</span></li><li>Diogo Alexandre Siebert <span>2025</span></li><li>Kleber Renan de Souza Santos <span>2022</span></li></ul></div><div><h3>Doctorado</h3><ul><li>João Paulo de Maçaneiro <span>2019, Ingeniería Forestal</span></li></ul></div><div><h3>Maestría</h3><ul><li>Luran Monteiro Muzeka <span>2025</span></li><li>Natália Deggau da Costa <span>2021</span></li><li>Fábio Fiamoncini Pastório <span>2019</span></li><li>Carlos Eduardo Schwartz <span>2019</span></li><li>Renato Colares Pereira <span>2019, codirección</span></li><li>Arthur Vinícius Rodrigues <span>2018</span></li><li>Karina Amarante Cavalheiro <span>2018</span></li></ul></div></div>
+</div></section>
+
+<section class="band" id="publicacoes"><div class="wrap">
+<h2>Publicaciones</h2>
+<p class="lead">Publicaciones recientes destacadas del grupo. La lista completa está en el Lattes y en Google Scholar.</p>
+<div class="two" style="margin-top:20px">
+<div><h3 style="margin-bottom:6px">Artículos destacados</h3><ul class="refs" id="hl"></ul>
+<div class="allpubs" style="margin-top:28px"><div><h3>Lista completa de publicaciones</h3><p>Todos los artículos, capítulos y libros, siempre actualizados, en los perfiles del grupo.</p></div><div class="chips"><a href="http://lattes.cnpq.br/7964289151492195" target="_blank" rel="noopener">Currículum Lattes</a><a href="https://scholar.google.com.br/citations?user=FPXYzWkAAAAJ&hl=pt-BR" target="_blank" rel="noopener">Google Scholar</a><a href="https://orcid.org/0000-0002-1940-9581" target="_blank" rel="noopener">ORCID</a><a href="https://www.researchgate.net/profile/Andre-De-Gasper" target="_blank" rel="noopener">ResearchGate</a></div></div>
+</div>
+<div><h3 style="margin-bottom:6px">Libros</h3><ul class="refs" id="books2"></ul><h3 style="margin:22px 0 6px">Inventario Florístico Forestal de Santa Catarina</h3><ul class="refs" id="books"></ul><p style="margin-top:10px;font-size:15px"><a href="https://www.iff.sc.gov.br/nossas-a%C3%A7%C3%B5es/invent%C3%A1rio-florestal/publica%C3%A7%C3%B5es/livros" target="_blank" rel="noopener">Cómo solicitar los libros del Inventario (en portugués) →</a></p>
+<h3 style="margin:28px 0 6px">En la prensa</h3><ul class="refs" id="press"></ul>
+
+</div>
+</div>
+
+</div></section>
+
+
+
+<section class="band alt" id="dados"><div class="wrap">
+<h2>Datos y código</h2>
+<p class="lead">Ciencia abierta: los datos y scripts de nuestros artículos publicados son públicos en el GitHub del grupo. Los nuevos repositorios se agregarán aquí a medida que se publiquen los artículos.</p>
+<div class="repos one"><a href="https://github.com/herbario-furb/treeferns" target="_blank" rel="noopener"><b>treeferns</b><span>Datos y código de “Expected impacts of climate change on tree ferns distribution and diversity patterns in subtropical Atlantic Forest” (Gasper et al. 2021).</span><em>R</em></a></div>
+</div></section>
+
+<section class="band join" id="junte-se"><div class="wrap">
+<div class="jtop"><div><h2>Únase al grupo</h2>
+<p class="lead">Recibimos estudiantes e investigadores de Brasil y del exterior interesados en helechos, bosques tropicales y colecciones biológicas.</p></div><figure class="jvid"><video autoplay muted loop playsinline preload="metadata" poster="img/campo/campo-sao-joaquim.jpg" aria-label="Fragmentos de la salida de campo de la asignatura de Biogeografía en el Parque Nacional de São Joaquim (SC)"><source src="img/campo/campo-sao-joaquim.mp4" type="video/mp4"></video><figcaption>Salida de campo en el Parque Nacional de São Joaquim (SC)</figcaption></figure></div>
+<div class="grid" style="margin-top:22px">
+<div class="card"><h3>Iniciación científica</h3><p>Los estudiantes de grado de la FURB pueden participar en los proyectos con becas de iniciación científica (CNPq, FAPESC y programas de la FURB) o como voluntarios.</p></div>
+<div class="card"><h3>Maestría y doctorado</h3><p>Dirección de tesis en los programas de posgrado de la FURB en Biodiversidad (PPGBio), Ciencias Ambientales (PPGCA) e Ingeniería Forestal, con becas según las convocatorias (CAPES, CNPq, FAPESC).</p></div>
+<div class="card"><h3>Posdoctorado</h3><p>Propuestas alineadas con las líneas del grupo, presentadas en conjunto a convocatorias de becas posdoctorales.</p></div>
+<div class="card"><h3>Visitantes</h3><p>Investigadores y estudiantes de otras instituciones, incluso del exterior, pueden desarrollar proyectos en el Herbario y usar los equipos del Laboratorio Multiusuario.</p></div>
+</div>
+<div class="howto"><div><h3>Cómo contactarnos</h3><p>Escriba al Prof. André con un breve currículum (Lattes o CV), algunas líneas sobre lo que le gustaría investigar y el programa o la beca a la que piensa postular.</p></div><a class="btn b1" href="mailto:algasper@furb.br?subject=Interesse%20em%20integrar%20o%20grupo">algasper@furb.br</a></div>
+</div></section>
+
+<div class="col">
+<div class="part pc" id="colecao"><div class="wrap"><span class="pk">Parte 2</span><h2>Herbario Dr. Roberto Miguel Klein</h2><p>La colección botánica de la FURB, abierta a la consulta, al intercambio y a las visitas.</p></div></div>
+<section class="band" id="herbario"><div class="wrap">
+<div class="two acv">
+<div>
+<h2>La colección</h2>
+<p class="lead">Creado en 1990, el Herbario lleva el nombre del botánico y ecólogo Roberto Miguel Klein, profesor de la FURB y gran estudioso de la flora de Santa Catarina.</p>
+<p>Alberga colecciones y estimula estudios sobre la diversidad de la flora. La colección está climatizada y cuenta con una biblioteca especializada. El mismo espacio alberga el Laboratorio Multiusuario, abierto a investigadores de otros grupos e instituciones. Se rige por la Resolución FURB n.º 68/2014.</p>
+<img class="acvimg" src="img/campo/acervo.jpg" alt="Sala de la colección del Herbario FURB, con archivos móviles" loading="lazy">
+</div>
+<div>
+<h3 style="margin-bottom:8px">Infraestructura</h3>
+<ul class="list">
+<li>Sala de colección climatizada, sala de procesamiento y espacio para curaduría y análisis de datos</li>
+<li>Dos estufas de secado e invernadero para plantas vivas</li>
+<li>Microscopio óptico Zeiss Primostar 3 y estereomicroscopio Zeiss Stemi 508 con cámara 4K</li>
+<li>Estación de fotografía de alta resolución y escáner para material tipo</li>
+<li>Banco de ADN con hojas preservadas en gel de sílice, vinculadas al espécimen de origen (<a href="https://docs.google.com/spreadsheets/d/1FdL8GCqunhBtQ0pwR_j5s0FSPs9Yq2kPrRNoz5XRKBk" target="_blank" rel="noopener">planilla de muestras</a>)</li>
+</ul>
+</div>
+</div>
+</div></section>
+<section class="band alt" id="servicos"><div class="wrap">
+<h2>Servicios de la colección</h2>
+<p class="lead">Para investigadores, estudiantes, escuelas e instituciones.</p>
+<div class="grid" style="margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,13em),1fr))">
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></div><h3>Consulta a la colección</h3><p>Especies y localidades de colecta en la base en línea, también en las redes speciesLink y SiBBr.</p><a class="go" href="https://furb.jbrj.gov.br/v2/consulta.php" target="_blank" rel="noopener">Abrir la base de datos →</a></div>
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg></div><h3>Intercambio y préstamo</h3><p>Intercambio de exsicatas con herbarios e instituciones, mediante solicitud a la curaduría.</p><a class="go" href="#contato">Contactar a la curaduría →</a></div>
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M8 3c0 6 8 6 8 12s-8 6-8 6M16 3c0 6-8 6-8 12M9 7h6M9 17h6"/></svg></div><h3>Banco de ADN</h3><p>Hojas preservadas en gel de sílice y vinculadas al espécimen de origen, disponibles para extracción e intercambio. La planilla de muestras se actualiza constantemente.</p><a class="go" href="https://docs.google.com/spreadsheets/d/1FdL8GCqunhBtQ0pwR_j5s0FSPs9Yq2kPrRNoz5XRKBk" target="_blank" rel="noopener">Ver planilla del Banco de ADN →</a></div>
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><h3>Visitas</h3><p>Grupos, investigadores y público programan la visita mediante el formulario en línea.</p><a class="go" href="https://forms.gle/2EX2ehDDwNBMtuyQ6" target="_blank" rel="noopener">Programar visita →</a></div>
+<div class="card" id="equipamentos"><div class="eqimgs"><img src="img/campo/microscopio.jpg" alt="Microscopio óptico Zeiss Primostar 3" loading="lazy"><img src="img/campo/estereomicroscopio.jpg" alt="Estereomicroscopio Zeiss Stemi 508 con cámara" loading="lazy"></div><h3>Equipos MultiLab SC</h3><p>Reserva de los equipos del laboratorio. Después de completar el formulario, avise a los responsables.</p><a class="go" href="https://forms.gle/7VR1YBo1QA7VKK8A6" target="_blank" rel="noopener">Reservar equipo →</a></div>
+</div>
+<div class="redes">
+<div><h3>La colección en las redes de datos</h3><p>Los registros del Herbario FURB y del FlorestaSC son abiertos y pueden consultarse en estas plataformas.</p></div>
+<div class="rl">
+<a href="https://furb.jbrj.gov.br/v2/consulta.php" target="_blank" rel="noopener"><b>JABOT</b><span>Base de datos del Herbario FURB, en el sistema del Jardín Botánico de Río de Janeiro</span></a>
+<a href="https://inct.splink.org.br" target="_blank" rel="noopener"><b>speciesLink</b><span>Red de colecciones biológicas de Brasil</span></a>
+<a href="https://www.sibbr.gov.br" target="_blank" rel="noopener"><b>SiBBr</b><span>Sistema de Información sobre la Biodiversidad Brasileña</span></a>
+<a href="https://iff.sc.gov.br" target="_blank" rel="noopener"><b>FlorestaSC</b><span>Inventario Florístico Forestal de Santa Catarina</span></a>
+</div>
+</div>
+</div></section>
+</div>
+
+<div class="photoband" role="img" aria-label="Bosque con araucarias, Urubici (SC)"><span>Bosque con araucarias, Urubici (SC)</span></div>
+<section class="band apoio" id="apoio"><div class="wrap">
+<h2 style="font-size:28px">Apoyo y alianzas</h2>
+<img class="banner" src="img/apoio/multilab-fapesc-sc.jpg" alt="MultiLab SC, FAPESC y Gobierno de Santa Catarina, Secretaría de Ciencia, Tecnología e Innovación">
+<div class="logos" id="logos"></div>
+</div></section>
+
+<section class="band contact" id="contato"><div class="wrap">
+<h2>Contacto</h2>
+<div class="two" style="margin-top:18px">
+<div class="cbox"><h3>Curaduría del Herbario</h3><p>Consultas a la colección, intercambios, préstamos, Banco de ADN y visitas.</p><div class="ctas" style="margin-top:14px"><a class="btn b1" style="background:#f2b544;color:#2a1c08" href="mailto:herbario@furb.br">herbario@furb.br</a></div></div>
+<div class="cbox"><h3>Grupo de investigación</h3><p>Dirección de tesis, pasantías y colaboraciones de investigación con el Prof. André Luís de Gasper.</p><div class="ctas" style="margin-top:14px"><a class="btn b2" href="mailto:algasper@furb.br">algasper@furb.br</a></div></div>
+</div>
+<dl style="margin-top:28px">
+<dt>Dirección</dt><dd>Rua Antônio da Veiga, 140, Victor Konder · Campus I, Bloque T, sala T-002 · 89030-903, Blumenau, SC, Brasil · <a href="https://goo.gl/maps/sVa6yqYR5V7E36Ei9" target="_blank" rel="noopener" style="color:#fff">ver en el mapa</a></dd>
+<dt>Teléfono</dt><dd style="white-space:nowrap">(47) 3321-0654</dd>
+</dl>
+</div></section>
+
+<footer><div class="wrap">
+<a class="flg" href="index.html" hreflang="pt-BR" lang="pt-BR"><svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" fill="#009c3b"/><path d="M14 2.5 25.5 10 14 17.5 2.5 10z" fill="#ffdf00"/><circle cx="14" cy="10" r="4.6" fill="#002776"/><path d="M9.6 9.2c3-.9 6.2-.6 8.8.9" stroke="#fff" stroke-width=".9" fill="none"/></svg>Português</a> · <a class="flg" href="en.html" hreflang="en" lang="en"><svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><clipPath id="ukc3"><rect width="60" height="40"/></clipPath><g clip-path="url(#ukc3)"><rect width="60" height="40" fill="#012169"/><path d="M0 0 60 40M60 0 0 40" stroke="#fff" stroke-width="8"/><path d="M0 0 60 40M60 0 0 40" stroke="#c8102e" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="12"/><path d="M30 0v40M0 20h60" stroke="#c8102e" stroke-width="7"/></g></svg>English</a>
+<span>Laboratorio Multiusuario Herbario FURB · Herbario Dr. Roberto Miguel Klein · Universidad Regional de Blumenau</span>
+</div></footer>
+
+<script>
+{
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $=id=>document.getElementById(id);
+$('idade').textContent=(new Date().getFullYear()-1990)+' años';
+
+const team=[
+["Posdoctorado",[["Thiago Caique Alves","Posdoctorado, PPGBio (FAPESC)","http://lattes.cnpq.br/1327513923808130",""],["Vanessa Lino de Lima","Posdoctorado, PPGCA (FAPESC)","http://lattes.cnpq.br/7631663804888798",""]]],
+["Doctorado",[["Giesta Maria Olmedo Machado","Doctoranda, PPGCA · investigadora del FlorestaSC","http://lattes.cnpq.br/3304402365400220","Procesos ecológicos y evolutivos en la diversificación de <i>Parablechnum</i>"],["Alana Ellen Ferreira da Silva","Doctoranda, PPGCA","","Límites del Bosque Atlántico: ecotonos con modelado florístico y lógica <i>fuzzy</i>"],["Marcos Vinicius Vizioli Klaus","Doctorando, PPGCA","https://lattes.cnpq.br/3563943236491073","Cambio climático, conservación y tecnologías para identificar plantas para la restauración"],["Gabriel Yan Rosa","Doctorando, PPGCA","http://lattes.cnpq.br/1277601159053724","Gradientes ecológicos y dinámica temporal del Bosque Atlántico"],["Iasmin Tassi Grott","Doctoranda, PPGCA · codirección","http://lattes.cnpq.br/4375298105906955","Impacto del cambio climático en helechos del Bosque Atlántico subtropical"],["Guilherme Salgado Grittz","Doctorando, Recursos Forestales (USP) · codirección","http://lattes.cnpq.br/0412205452545975","Endemismo, riesgo de extinción y singularidad evolutiva de la flora arbórea de América tropical"]]],
+["Maestría",[["Douglas Dickmann","Estudiante de maestría, PPG Ingeniería Forestal","http://lattes.cnpq.br/8425931952581501","Atributos funcionales y coocurrencia de especies en el Bosque Atlántico"],["Guilherme Werner Baenteli","Estudiante de maestría, PPGBio","http://lattes.cnpq.br/8968641170213817","Compuestos fenólicos y cuerpos silíceos en Blechnaceae"],["Mariana Hartmann Karkow","Estudiante de maestría, PPGBio","https://lattes.cnpq.br/6614370535272623","Citogenética de una posible especie híbrida en Blechnaceae"],["Laís Machado Tavares de Camargo","Estudiante de maestría, PPGBio","","Estudios moleculares en <i>Microgramma</i>"]]],
+["Grado y apoyo técnico",[["Luan Luiz da Silva","Iniciación científica (CNPq)","","Anatomía de <i>Austroblechnum</i> (Blechnaceae)"],["Priscila Kuchenbecker","Ayudante de Botánica y Ecología","http://lattes.cnpq.br/9586570289135864",""],["Marina Briese Gonçalves","Técnica de laboratorio","http://lattes.cnpq.br/7053600269498320",""]]]
+];
+const ini=n=>{const w=n.split(' ');return (w[0][0]+w[w.length-1][0]).toUpperCase()};
+const slug=n=>n.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-');
+const co=p=>/codirecci/i.test(p[1])?1:0;
+$('team').innerHTML=team.map(([g,ps])=>`<h3>${esc(g)}</h3>`+ps.slice().sort((a,b)=>co(a)-co(b)||a[0].localeCompare(b[0],'es')).map(([n,r,l,tp,em])=>`<div class="person"><div class="av">${esc(ini(n))}<img src="img/equipe/${slug(n)}.jpg" alt="Foto de ${esc(n)}" loading="lazy" onerror="this.remove()"></div><div><b class="pn">${esc(n)}</b><small>${esc(r)}</small>${tp?`<span class="tp">${tp}</span>`:""}${(l||em)?`<span class="pbt">${l?`<a href="${esc(l)}" target="_blank" rel="noopener">Lattes</a>`:""}${em?`<a href="mailto:${esc(em)}">Correo</a>`:""}</span>`:""}</div></div>`).join('')).join('');
+
+const doi=d=>d?` <a href="https://doi.org/${d}" target="_blank" rel="noopener">doi:${d}</a>`:'';
+/* Referências transcritas do site antigo (Google Sites); texto fixo deste arquivo, com nomes científicos em <i>. */
+const hl=[
+["Gasper, A. L. de et al. 2025. FlorestaSC: a double-up approach to improve biodiversity monitoring in hyperdiverse forests. <i>Forest Ecology and Management</i> 598: 123204.","10.1016/j.foreco.2025.123204"],
+["Lima, R. A. F. de et al. 2024. Comprehensive conservation assessments reveal high extinction risks across Atlantic Forest trees. <i>Science</i> 383: 219–225.","10.1126/science.abq5099"],
+["Lima, L. V. et al. 2026. Dispersal and regional diversification reveal tropical mountain systems as cradles of diversification for the forking ferns (Gleicheniaceae, Polypodiopsida). <i>Journal of Biogeography</i> 53: e70286.","10.1111/jbi.70286"],
+["Machado, G. M. O.; Gasper, A. L. de. 2024. Unraveling the <i>Parablechnum cordatum</i> (Blechnaceae: Polypodiopsida) complex puzzle. <i>Acta Botanica Brasilica</i> 38: e20230240.","10.1590/1677-941x-abb-2023-0240"],
+["Gasper, A. L. de et al. 2026. Understanding the potential for climate adaptation of the Atlantic Forest hotspot requires a research collaboration network. <i>Perspectives in Ecology and Conservation</i> 24: 274–279.","10.1016/j.pecon.2026.03.003"],
+["Mo, L. et al. 2023. Integrated global assessment of the natural forest carbon potential. <i>Nature</i> 624: 92–101.","10.1038/s41586-023-06723-z"],
+["Gasper, A. L. de; Stehmann, J. R.; Roque, N.; Narcísio, C. B.; Sartori, Â. L. B.; Grittz, G. S. 2020. Brazilian herbaria: an overview. <i>Acta Botanica Brasilica</i> 34(2): 352–359.","10.1590/010233062019abb0390"],
+["PPG I. 2016. A community-derived classification for extant lycophytes and ferns. <i>Journal of Systematics and Evolution</i> 54(6): 563–603.","10.1111/jse.12229"]
+];
+$('hl').innerHTML=hl.map(([t,d])=>`<li>${t}${doi(d)}</li>`).join('');
+
+$('books2').innerHTML=[["Marinoni, L.; Basílio, D. S.; Gasper, A. L. de (orgs.). 2024. Coleções biológicas científicas brasileiras: diagnóstico, prioridades e recomendações.","10.7476/9786587590066"],["Marinoni, L. et al. 2024. Introdução e orientações às boas práticas para as coleções biológicas científicas brasileiras.","10.7476/9786587590042"]].map(([t,d])=>`<li>${t}${doi(d)}</li>`).join('');
+const books=["Vol. I – Diversidade e conservação dos remanescentes florestais (2012)","Vol. II – Floresta Estacional Decidual (2012)","Vol. III – Floresta Ombrófila Mista (2013)","Vol. IV – Floresta Ombrófila Densa (2013)","Vol. V – Epífitos vasculares da Floresta Ombrófila Densa (2013)","Vol. VII – Espécies arbóreas raras de Santa Catarina (2018)"];
+$('books').innerHTML=books.map(b=>`<li>${esc(b)}<br><span class="when">Edifurb, Blumenau</span></li>`).join('');
+
+const press=[
+["Dia da Mata Atlântica: desmatamento cresce 52% em Santa Catarina","NSC Total, 27/05/2019","https://www.nsctotal.com.br/noticias/dia-da-mata-atlantica-desmatamento-cresce-52-em-santa-catarina"],
+["Calor e chuva favorecem floração incomum que colore paisagem de Blumenau","NSC Total, 04/02/2017","https://www.nsctotal.com.br/noticias/calor-e-chuva-favorecem-floracao-incomum-que-colore-paisagem-de-blumenau"],
+["Herbário da Furb coleta mais de 50 mil amostras","Video, 25/07/2016","https://www.youtube.com/watch?v=lZ_T_4AwnEI"],
+["Tá Rolando","Programa de la FURB, 16/09/2015","https://www.youtube.com/watch?v=v_tNeWlxcjA"],
+["Ipês-amarelos vistosos em Blumenau","NSC Total, 23/10/2014","https://www.nsctotal.com.br/noticias/pouca-chuva-floracao-duplicada-e-de-diferentes-especies-contribuem-para-ipes-amarelos"],
+["Herbario FURB","Universo Pesquisa, FURB, 07/2009","https://www.youtube.com/watch?v=NZ_ZP-sN99k"]
+];
+$('press').innerHTML=press.map(([t,v,l])=>`<li><a href="${esc(l)}" target="_blank" rel="noopener">${esc(t)}</a><br><span class="when">${esc(v)}</span></li>`).join('');
+
+
+const apoio=[["CNPq","cnpq.png"],["CAPES","capes.png"],["FINEP","finep.png"],["IMA/SC","ima-sc.png"],["Fundação Fritz Müller","fundacao-fritz-muller.png"],["INCT","inct.png"],["Servicio Forestal Brasileño","servico-florestal-brasileiro.png"],["Inventario Florístico Forestal de Santa Catarina","florestasc.png"]];
+$('logos').innerHTML=apoio.map(([n,f])=>`<div class="logo-i ok"><img src="img/apoio/${f}" alt="${esc(n)}"></div>`).join('');
+}
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video').forEach(v=>{v.removeAttribute('autoplay');v.pause()});
+</script>
+</body>
+</html>
