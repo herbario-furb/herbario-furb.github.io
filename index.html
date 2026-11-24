@@ -75,15 +75,15 @@ ul.list p{color:var(--muted);margin:4px 0 0}
 .alt .card{background:var(--bg)}
 .curator{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center;background:var(--deep);color:#fff;border-radius:16px;padding:24px;margin-bottom:8px}
 .curator p{color:#cfe3d6;margin:0}
-.mono{width:112px;height:112px;border-radius:50%;background:var(--sprout);color:#0a2b1d;display:grid;place-items:center;font:700 30px Fraunces,Georgia,serif;overflow:hidden;position:relative}
+.mono{width:132px;height:132px;border-radius:50%;background:var(--sprout);color:#0a2b1d;display:grid;place-items:center;font:700 30px Fraunces,Georgia,serif;overflow:hidden;position:relative}
 .mono img,.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .chips a{font-size:14px;padding:6px 12px;border:1px solid var(--line);border-radius:99px;text-decoration:none}
 .curator .chips a{border-color:#ffffff55;color:#fff}
 .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17em),1fr));gap:0 28px}
 .team h3{grid-column:1/-1;margin:22px 0 4px;font-size:19px}
-.person{padding:12px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;align-items:center}
-.av{width:64px;height:64px;border-radius:50%;background:var(--deep);color:var(--sprout);display:grid;place-items:center;font:700 20px Fraunces,Georgia,serif;overflow:hidden;position:relative}
+.person{padding:12px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:80px minmax(0,1fr);gap:16px;align-items:center}
+.av{width:80px;height:80px;border-radius:50%;background:var(--deep);color:var(--sprout);display:grid;place-items:center;font:700 20px Fraunces,Georgia,serif;overflow:hidden;position:relative}
 .person a{font-weight:600;text-decoration:none}
 .person a:hover{text-decoration:underline}
 .person small{display:block;color:var(--muted);font-size:14px}
@@ -100,6 +100,15 @@ summary small{font:400 14px "Public Sans",sans-serif;color:var(--muted);margin-l
 .allpubs p{margin:4px 0 0;color:var(--muted)}
 .allpubs .chips{margin:0}
 .allpubs .chips a{font-weight:700;color:var(--leaf);padding:10px 16px}
+.redes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:20px 40px;align-items:center;margin-top:32px;padding:24px;border-radius:14px;background:var(--deep);color:#fff}
+.redes p{color:#cfe3d6;margin:6px 0 0}
+.rl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media(max-width:600px){.rl{grid-template-columns:minmax(0,1fr)}}
+.rl a{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border-radius:10px;background:#ffffff14;border:1px solid #ffffff33;text-decoration:none;color:#fff;transition:background .15s}
+.rl a:hover{background:#ffffff26}
+.rl b{color:var(--sprout);font-size:18px}
+.rl span{font-size:14px;color:#cfe3d6}
+@media(max-width:860px){.redes{grid-template-columns:minmax(0,1fr)}}
 .contact{background:var(--deep2);color:#fff}
 .contact p,.contact dd{color:#cfe3d6}
 dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px 20px;margin:0}
@@ -125,7 +134,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 <nav aria-label="Principal"><div class="wrap">
 <a class="brand" href="#inicio">Laboratório Multiusuário Herbário FURB</a>
 <div class="links">
-<a href="#pesquisa">Pesquisa</a><a href="#herbario">Herbário</a><a href="#projetos">Projetos</a><a href="#equipe">Equipe</a><a href="#publicacoes">Publicações</a><a href="#contato">Contato</a>
+<a href="#pesquisa">Pesquisa</a><a href="#herbario">Herbário</a><a href="#projetos">Projetos</a><a href="#equipe">Equipe</a><a href="#publicacoes">Publicações</a><a href="#apoio">Apoio</a><a href="#contato">Contato</a>
 </div></div></nav>
 
 <header class="hero band" id="inicio"><div class="wrap top">
@@ -157,10 +166,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 </div>
 </div>
 <div class="wrap facts">
+<div><b id="idade">36 anos</b><span>de Herbário, desde 1990</span></div>
 <div><b>85 mil+</b><span>exsicatas no acervo</span></div>
 <div><b>103</b><span>artigos em periódicos</span></div>
 <div><b>73</b><span>estudantes orientados, da iniciação ao pós-doutorado</span></div>
-<div><b>1990</b><span>criação do Herbário</span></div>
 </div>
 </header>
 
@@ -198,6 +207,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M8 3c0 6 8 6 8 12s-8 6-8 6M16 3c0 6-8 6-8 12M9 7h6M9 17h6"/></svg></div><h3>Banco de DNA</h3><p>Folhas preservadas em sílica-gel e ligadas ao espécime de origem, disponíveis para extração e permuta. A planilha de amostras é atualizada constantemente.</p><a class="go" href="https://docs.google.com/spreadsheets/d/1FdL8GCqunhBtQ0pwR_j5s0FSPs9Yq2kPrRNoz5XRKBk" target="_blank" rel="noopener">Ver planilha do Banco de DNA →</a></div>
 <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><h3>Visitas</h3><p>Turmas, pesquisadores e público agendam a visita pelo formulário on-line.</p><a class="go" href="https://forms.gle/2EX2ehDDwNBMtuyQ6" target="_blank" rel="noopener">Agendar visita →</a></div>
 <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/></svg></div><h3>Equipamentos MultiLab SC</h3><p>Reserva dos equipamentos do laboratório. Depois de preencher, avise os responsáveis.</p><a class="go" href="https://forms.gle/7VR1YBo1QA7VKK8A6" target="_blank" rel="noopener">Reservar equipamento →</a></div>
+</div>
+<div class="redes">
+<div><h3>Acervo nas redes de dados</h3><p>Os registros do Herbário FURB e do FlorestaSC são abertos e podem ser consultados nestas plataformas.</p></div>
+<div class="rl">
+<a href="https://furb.jbrj.gov.br/v2/consulta.php" target="_blank" rel="noopener"><b>JABOT</b><span>Base de dados do Herbário FURB, no sistema do Jardim Botânico do Rio de Janeiro</span></a>
+<a href="https://inct.splink.org.br" target="_blank" rel="noopener"><b>speciesLink</b><span>Rede de coleções biológicas do Brasil</span></a>
+<a href="https://www.sibbr.gov.br" target="_blank" rel="noopener"><b>SiBBr</b><span>Sistema de Informação sobre a Biodiversidade Brasileira</span></a>
+<a href="https://iff.sc.gov.br" target="_blank" rel="noopener"><b>FlorestaSC</b><span>Inventário Florístico Florestal de Santa Catarina</span></a>
+</div>
 </div>
 </div></section>
 
@@ -237,11 +255,23 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 <h2>Publicações</h2>
 <p class="lead">Destaques recentes do grupo. A lista completa está no Lattes e no Google Scholar.</p>
 <div class="two" style="margin-top:20px">
-<div><h3 style="margin-bottom:6px">Artigos em destaque</h3><ul class="refs" id="hl"></ul></div>
-<div><h3 style="margin-bottom:6px">Livros</h3><ul class="refs" id="books2"></ul><h3 style="margin:22px 0 6px">Inventário Florístico Florestal de Santa Catarina</h3><ul class="refs" id="books"></ul>
-<h3 style="margin:28px 0 6px">Na imprensa</h3><ul class="refs" id="press"></ul></div>
+<div><h3 style="margin-bottom:6px">Artigos em destaque</h3><ul class="refs" id="hl"></ul>
+<div class="allpubs" style="margin-top:28px"><div><h3>Lista completa de publicações</h3><p>Todos os artigos, capítulos e livros, sempre atualizados, nos perfis do grupo.</p></div><div class="chips"><a href="http://lattes.cnpq.br/7964289151492195" target="_blank" rel="noopener">Currículo Lattes</a><a href="https://scholar.google.com.br/citations?user=FPXYzWkAAAAJ&hl=pt-BR" target="_blank" rel="noopener">Google Scholar</a><a href="https://orcid.org/0000-0002-1940-9581" target="_blank" rel="noopener">ORCID</a><a href="https://www.researchgate.net/profile/Andre-De-Gasper" target="_blank" rel="noopener">ResearchGate</a></div></div>
 </div>
-<div class="allpubs"><div><h3>Lista completa de publicações</h3><p>Todos os artigos, capítulos e livros, sempre atualizados, nos perfis do grupo.</p></div><div class="chips"><a href="http://lattes.cnpq.br/7964289151492195" target="_blank" rel="noopener">Currículo Lattes</a><a href="https://scholar.google.com.br/citations?user=FPXYzWkAAAAJ&hl=pt-BR" target="_blank" rel="noopener">Google Scholar</a><a href="https://orcid.org/0000-0002-1940-9581" target="_blank" rel="noopener">ORCID</a><a href="https://www.researchgate.net/profile/Andre-De-Gasper" target="_blank" rel="noopener">ResearchGate</a></div></div>
+<div><h3 style="margin-bottom:6px">Livros</h3><ul class="refs" id="books2"></ul><h3 style="margin:22px 0 6px">Inventário Florístico Florestal de Santa Catarina</h3><ul class="refs" id="books"></ul>
+<h3 style="margin:28px 0 6px">Na imprensa</h3><ul class="refs" id="press"></ul>
+
+</div>
+</div>
+
+</div></section>
+
+
+
+<section class="band apoio" id="apoio"><div class="wrap">
+<h2 style="font-size:28px">Apoio e parcerias</h2>
+<img class="banner" src="img/apoio/multilab-fapesc-sc.jpg" alt="MultiLab SC, FAPESC e Governo de Santa Catarina, Secretaria da Ciência, Tecnologia e Inovação">
+<div class="logos" id="logos"></div>
 </div></section>
 
 <section class="band contact" id="contato"><div class="wrap two">
@@ -258,21 +288,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 </dl>
 </div></section>
 
-<section class="band apoio" id="apoio"><div class="wrap">
-<h2 style="font-size:28px">Apoio e parcerias</h2>
-<img class="banner" src="img/apoio/multilab-fapesc-sc.jpg" alt="MultiLab SC, FAPESC e Governo de Santa Catarina, Secretaria da Ciência, Tecnologia e Inovação">
-<div class="logos" id="logos"></div>
-</div></section>
-
 <footer><div class="wrap">
 <span>Laboratório Multiusuário Herbário FURB · Herbário Dr. Roberto Miguel Klein · Universidade Regional de Blumenau</span>
-<span>Redes: <a href="https://inct.splink.org.br" target="_blank" rel="noopener">speciesLink</a> · <a href="https://www.sibbr.gov.br" target="_blank" rel="noopener">SiBBr</a> · <a href="https://iff.sc.gov.br" target="_blank" rel="noopener">FlorestaSC</a></span>
 </div></footer>
 
 <script>
 {
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const $=id=>document.getElementById(id);
+$('idade').textContent=(new Date().getFullYear()-1990)+' anos';
 
 const team=[
 ["Pós-doutorado",[["Thiago Caique Alves","PPGBio","http://lattes.cnpq.br/1327513923808130"],["Vanessa Lino de Lima","PPGCA","http://lattes.cnpq.br/7631663804888798"]]],
