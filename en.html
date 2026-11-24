@@ -206,13 +206,19 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 .howto p{color:#cfe3d6;margin:6px 0 0}
 @media(max-width:980px){.nl,.repos{grid-template-columns:repeat(2,minmax(0,1fr))}.alum{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.nl,.repos,.alum{grid-template-columns:minmax(0,1fr)}}
+
+.links a.lang{display:inline-flex;align-items:center;gap:8px}
+.flag{width:24px;height:16px;border-radius:2px;box-shadow:0 0 0 1px #ffffff55;flex:none}
+.langbar{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:8px 14px;border-radius:99px;border:1px solid #ffffff44;color:#fff;text-decoration:none;font-weight:700;font-size:15px}
+.langbar:hover{background:#ffffff1a}
+footer a.flg{display:inline-flex;align-items:center;gap:6px;color:inherit}
 </style>
 </head>
 <body>
 <nav aria-label="Main"><div class="wrap">
 <a class="brand" href="#inicio">FURB Herbarium</a>
 <div class="links">
-<a class="ng" href="#grupo">Research group</a><a href="#projetos">Projects</a><a href="#equipe">Team</a><a href="#publicacoes">Publications</a><a href="#junte-se">Join us</a><span class="sep" aria-hidden="true"></span><a class="nc" href="#colecao">Collection</a><a href="#servicos">Services</a><span class="sep" aria-hidden="true"></span><a href="#contato">Contact</a><a class="lang" href="index.html" hreflang="pt-BR" lang="pt-BR">PT</a>
+<a class="ng" href="#grupo">Research group</a><a href="#projetos">Projects</a><a href="#equipe">Team</a><a href="#publicacoes">Publications</a><a href="#junte-se">Join us</a><span class="sep" aria-hidden="true"></span><a class="nc" href="#colecao">Collection</a><a href="#servicos">Services</a><span class="sep" aria-hidden="true"></span><a href="#contato">Contact</a><a class="lang" title="Versão em português" href="index.html" hreflang="pt-BR" lang="pt-BR"><svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" fill="#009c3b"/><path d="M14 2.5 25.5 10 14 17.5 2.5 10z" fill="#ffdf00"/><circle cx="14" cy="10" r="4.6" fill="#002776"/><path d="M9.6 9.2c3-.9 6.2-.6 8.8.9" stroke="#fff" stroke-width=".9" fill="none"/></svg><span>PT</span></a>
 </div></div></nav>
 
 <header class="hero band" id="inicio"><div class="wrap top">
@@ -224,6 +230,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 <a class="btn b1" href="#grupo">Meet the group</a>
 <a class="btn b2" href="https://furb.jbrj.gov.br/v2/consulta.php" target="_blank" rel="noopener">Search the collection</a>
 </div>
+<a class="langbar" href="index.html" hreflang="pt-BR" lang="pt-BR"><svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" fill="#009c3b"/><path d="M14 2.5 25.5 10 14 17.5 2.5 10z" fill="#ffdf00"/><circle cx="14" cy="10" r="4.6" fill="#002776"/><path d="M9.6 9.2c3-.9 6.2-.6 8.8.9" stroke="#fff" stroke-width=".9" fill="none"/></svg>Versão em português</a>
 </div>
 <div class="pic" id="pic">
 <div class="logo"><img src="img/logo-claro.png" alt="Dr. Roberto Miguel Klein Herbarium logo (FURB)" onload="document.getElementById('pic').classList.add('has-logo')" onerror="this.remove()"></div>
@@ -407,6 +414,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 </div></section>
 
 <footer><div class="wrap">
+<a class="flg" href="index.html" hreflang="pt-BR" lang="pt-BR"><svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" fill="#009c3b"/><path d="M14 2.5 25.5 10 14 17.5 2.5 10z" fill="#ffdf00"/><circle cx="14" cy="10" r="4.6" fill="#002776"/><path d="M9.6 9.2c3-.9 6.2-.6 8.8.9" stroke="#fff" stroke-width=".9" fill="none"/></svg>Português</a>
 <span>FURB Herbarium Multi-User Laboratory · Dr. Roberto Miguel Klein Herbarium · Regional University of Blumenau, Brazil</span>
 </div></footer>
 
