@@ -56,10 +56,8 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--sprout);outline-of
 .b1{background:var(--sprout);color:#0a2b1d}
 .b2{border-color:#ffffff66;color:#fff}
 .pic{position:relative}
-.sheet{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 24px #0006)}
-.logo{display:none;margin:auto;text-align:center}
+.logo{display:block;margin:auto;text-align:center}
 .logo img{width:auto;height:clamp(260px,34vw,440px);max-width:100%;object-fit:contain}
-.has-logo .logo{display:block}.has-logo .sheet{display:none}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(10em,1fr));gap:1px;background:#ffffff2a;margin-top:clamp(28px,4vw,48px);border-top:1px solid #ffffff2a}
 .facts div{background:var(--deep);padding:18px 18px 4px}
 .facts div:first-child{padding-left:0}
@@ -96,6 +94,8 @@ ul.list p{color:var(--muted);margin:4px 0 0}
 .person a{font-weight:600;text-decoration:none}
 .person a:hover{text-decoration:underline}
 .person small{display:block;color:var(--muted);font-size:14px}
+.person .pn{font-weight:600;display:block}
+.pbt{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.pbt a{font-size:13px;font-weight:600;padding:3px 11px;border:1px solid var(--line);border-radius:99px;text-decoration:none;color:var(--leaf)}.pbt a:hover{background:var(--leaf);color:#fff;text-decoration:none}
 .refs{margin:0;padding:0;list-style:none}
 .refs li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
 .refs a{color:var(--leaf);overflow-wrap:anywhere;text-decoration:none;font-weight:600}
@@ -135,8 +135,7 @@ footer{background:var(--deep2);color:#a9c2b3;font-size:14px;border-top:1px solid
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 @media(max-width:860px){.hero .top,.two{grid-template-columns:minmax(0,1fr)}.hero .pic{max-width:460px}}
 @media(max-width:600px){.links{width:100%;margin-left:0}.curator{grid-template-columns:minmax(0,1fr)}dl{grid-template-columns:minmax(0,1fr)}dt{margin-top:8px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}#frond{animation:none!important}}
-@keyframes sway{from{transform:rotate(-1.2deg)}to{transform:rotate(1.2deg)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 /* Proposta 2: grupo em verde-floresta, coleção em âmbar e papel de herbário */
 .links{align-items:center}
 .links .sep{flex:none;width:1px;height:22px;background:#ffffff33;margin:0 6px}
@@ -218,10 +217,11 @@ footer a.flg{display:inline-flex;align-items:center;gap:6px;color:inherit}
 .rqimg{display:block;max-width:none;width:calc(100% + 44px);margin:-22px -22px 6px;height:170px;object-fit:cover;border-radius:14px 14px 0 0}
 .rq{overflow:hidden}
 .jtop{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center}
-.jtop img{width:100%;height:230px;object-fit:cover;border-radius:14px}
+.jtop img,.jvid video{width:100%;height:230px;object-fit:cover;border-radius:14px;display:block;background:#0d3a26}
+.jvid{margin:0}.jvid figcaption{font-size:13px;color:var(--muted);margin-top:6px}
 .photoband{height:clamp(220px,32vw,380px);background:url(img/campo/araucarias.jpg) center 40%/cover;position:relative}
 .photoband span{position:absolute;right:max(5vw,16px);bottom:14px;color:#fff;font-size:13px;opacity:.85}
-@media(max-width:760px){.jtop{grid-template-columns:minmax(0,1fr)}.jtop img{height:200px}}
+@media(max-width:760px){.jtop{grid-template-columns:minmax(0,1fr)}.jtop img,.jvid video{height:200px}}
 .acvimg{display:block;width:100%;height:280px;object-fit:cover;object-position:center 60%;border-radius:14px;margin-top:10px}
 .eqimgs{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#fff;border-radius:10px;padding:8px;margin-bottom:4px}
 .eqimgs img{width:100%;height:110px;object-fit:contain}
@@ -242,25 +242,12 @@ footer a.flg{display:inline-flex;align-items:center;gap:6px;color:inherit}
 <div class="ctas">
 <a class="btn b1" href="#grupo">Conheça o grupo</a>
 <a class="btn b2" href="https://furb.jbrj.gov.br/v2/consulta.php" target="_blank" rel="noopener">Consultar o acervo</a>
+<a class="btn b2" href="#equipamentos">Reservar equipamentos</a>
 </div>
 <a class="langbar" href="en.html" hreflang="en" lang="en"><svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><clipPath id="ukc"><rect width="60" height="40"/></clipPath><g clip-path="url(#ukc)"><rect width="60" height="40" fill="#012169"/><path d="M0 0 60 40M60 0 0 40" stroke="#fff" stroke-width="8"/><path d="M0 0 60 40M60 0 0 40" stroke="#c8102e" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="12"/><path d="M30 0v40M0 20h60" stroke="#c8102e" stroke-width="7"/></g></svg>English version</a>
 </div>
 <div class="pic" id="pic">
 <div class="logo"><img src="img/logo-claro.png" alt="Logo do Herbário Dr. Roberto Miguel Klein (FURB)" onload="document.getElementById('pic').classList.add('has-logo')" onerror="this.remove()"></div>
-<svg class="sheet" viewBox="0 0 520 640" role="img" aria-label="Ilustração de uma exsicata de samambaia com etiqueta do Herbário FURB">
-<defs><linearGradient id="pn" x1="0" x2="1"><stop offset="0" stop-color="#3f8f5c"/><stop offset="1" stop-color="#1f5e3a"/></linearGradient><linearGradient id="pp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef3ef"/></linearGradient></defs>
-<rect x="20" y="14" width="480" height="612" rx="4" fill="url(#pp)"/>
-<g id="frond" style="transform-origin:236px 560px;animation:sway 6s ease-in-out infinite alternate"></g>
-<rect x="196" y="508" width="64" height="20" fill="#e8dfc4" opacity=".85" transform="rotate(-8 228 518)"/>
-<rect x="150" y="250" width="44" height="14" fill="#e8dfc4" opacity=".8" transform="rotate(12 172 257)"/>
-<g transform="translate(300 486)"><rect width="182" height="118" rx="2" fill="#fff" stroke="#c9d6ce"/>
-<text x="10" y="20" font-family="Public Sans,sans-serif" font-size="11" font-weight="700" fill="#0f3a28">HERBÁRIO FURB</text>
-<line x1="10" y1="27" x2="172" y2="27" stroke="#0f3a28" stroke-width=".8"/>
-<text x="10" y="44" font-family="Public Sans,sans-serif" font-size="10" fill="#4b5c53">Blechnaceae</text>
-<text x="10" y="60" font-family="Fraunces,serif" font-size="13" font-style="italic" fill="#14201a">Parablechnum cordatum</text>
-<text x="10" y="76" font-family="Public Sans,sans-serif" font-size="9.5" fill="#4b5c53">Blumenau, Santa Catarina</text>
-<g id="bars" transform="translate(10 86)"></g></g>
-</svg>
 </div>
 </div>
 <div class="wrap doors">
@@ -286,7 +273,7 @@ footer a.flg{display:inline-flex;align-items:center;gap:6px;color:inherit}
 <section class="band" id="pesquisa"><div class="wrap">
 <div class="intro2"><h2>Linhas de pesquisa</h2>
 <p class="lead">A Floresta Atlântica é um dos <i>hotspots</i> globais de biodiversidade: muito diversa, rica em espécies endêmicas e reduzida a fragmentos. Isso faz dela um laboratório natural para perguntas que valem para as florestas tropicais do mundo todo.</p></div>
-<div class="grid" style="margin-top:22px"><div class="card rq"><img class="rqimg" src="img/campo/pinas.jpg" alt="Detalhe das pinas de uma samambaia" loading="lazy"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21V4M12 7c-3 0-5 1-6 3M12 7c3 0 5 1 6 3M12 11c-3 0-5 1-6 3M12 11c3 0 5 1 6 3M12 15c-2 0-4 1-5 2M12 15c2 0 4 1 5 2"/></svg></div><h3>Sistemática e evolução de licófitas e samambaias</h3><p class="q">Como surgem e como se delimitam as espécies de samambaias, e o que a história evolutiva delas revela sobre a diversificação das plantas nos trópicos?</p><p>Taxonomia integrativa, filogenia, biogeografia e evolução cromossômica, com dados moleculares, morfometria, esporos, citometria de fluxo e cariologia.</p><span class="kp">Artigos-chave</span><ul class="kpl"><li>PPG I 2016, <i>J. Syst. Evol.</i> <a href="https://doi.org/10.1111/jse.12229" target="_blank" rel="noopener">doi</a></li><li>Gasper et al. 2017, <i>Cladistics</i> <a href="https://doi.org/10.1111/cla.12173" target="_blank" rel="noopener">doi</a></li><li>Machado &amp; Gasper 2024, <i>Acta Bot. Bras.</i> <a href="https://doi.org/10.1590/1677-941x-abb-2023-0240" target="_blank" rel="noopener">doi</a></li><li>Lima et al. 2026, <i>J. Biogeogr.</i> <a href="https://doi.org/10.1111/jbi.70286" target="_blank" rel="noopener">doi</a></li></ul></div><div class="card rq"><img class="rqimg" src="img/campo/campos-altitude.jpg" alt="Campos de altitude e floresta com araucárias em Urubici, SC" loading="lazy"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 20v-4M17 20v-6M7 16l-4-1 4-9 4 9zM17 14l-4-1 4-8 4 8z"/></svg></div><h3>Ecologia de florestas tropicais</h3><p class="q">Como as florestas respondem ao clima e às pressões humanas, e o que isso significa para a biodiversidade e o carbono das florestas tropicais?</p><p>Estrutura, dinâmica, mortalidade e atributos funcionais das árvores, distribuição de espécies e mudanças climáticas, com os dados de longo prazo do FlorestaSC.</p><span class="kp">Artigos-chave</span><ul class="kpl"><li>Gasper et al. 2025, <i>For. Ecol. Manage.</i> <a href="https://doi.org/10.1016/j.foreco.2025.123204" target="_blank" rel="noopener">doi</a></li><li>Lima et al. 2024, <i>Science</i> <a href="https://doi.org/10.1126/science.abq5099" target="_blank" rel="noopener">doi</a></li><li>Gasper et al. 2021, <i>Perspect. Ecol. Conserv.</i> <a href="https://doi.org/10.1016/j.pecon.2021.03.007" target="_blank" rel="noopener">doi</a></li><li>Mo et al. 2023, <i>Nature</i> <a href="https://doi.org/10.1038/s41586-023-06723-z" target="_blank" rel="noopener">doi</a></li></ul></div><div class="card rq"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div><h3>Coleções biológicas</h3><p class="q">Como transformar coleções científicas em dados abertos e confiáveis para a pesquisa e a conservação?</p><p>Curadoria, digitalização, diagnóstico e políticas para as coleções biológicas brasileiras, a partir da experiência do Herbário FURB.</p><span class="kp">Artigos-chave</span><ul class="kpl"><li>Gasper et al. 2020, <i>Acta Bot. Bras.</i> <a href="https://doi.org/10.1590/010233062019abb0390" target="_blank" rel="noopener">doi</a></li><li>Gasper et al. 2021, <i>Acta Bot. Bras.</i> <a href="https://doi.org/10.1590/0102-33062020abb0246" target="_blank" rel="noopener">doi</a></li><li>Marinoni, Basílio &amp; Gasper (orgs.) 2024 <a href="https://doi.org/10.7476/9786587590066" target="_blank" rel="noopener">doi</a></li></ul></div></div>
+<div class="grid" style="margin-top:22px"><div class="card rq"><img class="rqimg" src="img/campo/pinas.jpg" alt="Detalhe das pinas de uma samambaia" loading="lazy"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21V4M12 7c-3 0-5 1-6 3M12 7c3 0 5 1 6 3M12 11c-3 0-5 1-6 3M12 11c3 0 5 1 6 3M12 15c-2 0-4 1-5 2M12 15c2 0 4 1 5 2"/></svg></div><h3>Sistemática e evolução de licófitas e samambaias</h3><p class="q">Como surgem e como se delimitam as espécies de samambaias, e o que a história evolutiva delas revela sobre a diversificação das plantas nos trópicos?</p><p>Taxonomia integrativa, filogenia, biogeografia e evolução cromossômica, com dados moleculares, morfometria, esporos, citometria de fluxo e cariologia.</p><span class="kp">Artigos-chave</span><ul class="kpl"><li>PPG I 2016, <i>J. Syst. Evol.</i> <a href="https://doi.org/10.1111/jse.12229" target="_blank" rel="noopener">doi</a></li><li>Gasper et al. 2017, <i>Cladistics</i> <a href="https://doi.org/10.1111/cla.12173" target="_blank" rel="noopener">doi</a></li><li>Machado &amp; Gasper 2024, <i>Acta Bot. Bras.</i> <a href="https://doi.org/10.1590/1677-941x-abb-2023-0240" target="_blank" rel="noopener">doi</a></li><li>Lima et al. 2026, <i>J. Biogeogr.</i> <a href="https://doi.org/10.1111/jbi.70286" target="_blank" rel="noopener">doi</a></li></ul></div><div class="card rq"><img class="rqimg" src="img/campo/campos-altitude.jpg" alt="Campos de altitude e floresta com araucárias em Urubici, SC" loading="lazy"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 20v-4M17 20v-6M7 16l-4-1 4-9 4 9zM17 14l-4-1 4-8 4 8z"/></svg></div><h3>Ecologia de florestas tropicais</h3><p class="q">Como as florestas respondem ao clima e às pressões humanas, e o que isso significa para a biodiversidade e o carbono das florestas tropicais?</p><p>Estrutura, dinâmica, mortalidade e atributos funcionais das árvores, distribuição de espécies e mudanças climáticas, com os dados de longo prazo do FlorestaSC.</p><span class="kp">Artigos-chave</span><ul class="kpl"><li>Gasper et al. 2025, <i>For. Ecol. Manage.</i> <a href="https://doi.org/10.1016/j.foreco.2025.123204" target="_blank" rel="noopener">doi</a></li><li>Lima et al. 2024, <i>Science</i> <a href="https://doi.org/10.1126/science.abq5099" target="_blank" rel="noopener">doi</a></li><li>Gasper et al. 2021, <i>Perspect. Ecol. Conserv.</i> <a href="https://doi.org/10.1016/j.pecon.2021.03.007" target="_blank" rel="noopener">doi</a></li><li>Mo et al. 2023, <i>Nature</i> <a href="https://doi.org/10.1038/s41586-023-06723-z" target="_blank" rel="noopener">doi</a></li></ul></div><div class="card rq"><img class="rqimg" src="img/campo/acervo.jpg" alt="Sala da coleção do Herbário FURB" loading="lazy"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div><h3>Coleções biológicas</h3><p class="q">Como transformar coleções científicas em dados abertos e confiáveis para a pesquisa e a conservação?</p><p>Curadoria, digitalização, diagnóstico e políticas para as coleções biológicas brasileiras, a partir da experiência do Herbário FURB.</p><span class="kp">Artigos-chave</span><ul class="kpl"><li>Gasper et al. 2020, <i>Acta Bot. Bras.</i> <a href="https://doi.org/10.1590/010233062019abb0390" target="_blank" rel="noopener">doi</a></li><li>Gasper et al. 2021, <i>Acta Bot. Bras.</i> <a href="https://doi.org/10.1590/0102-33062020abb0246" target="_blank" rel="noopener">doi</a></li><li>Marinoni, Basílio &amp; Gasper (orgs.) 2024 <a href="https://doi.org/10.7476/9786587590066" target="_blank" rel="noopener">doi</a></li></ul></div></div>
 <div class="net"><span class="kp">Rede de colaboração</span><p>Pteridophyte Phylogeny Group (PPG) · Missouri Botanical Garden · Universidade de Cambridge · Global Forest Biodiversity Initiative (GFBI) · sPlot · Flora e Funga do Brasil · parceiros na Colômbia e em toda a América Latina</p></div>
 </div></section>
 
@@ -325,8 +312,8 @@ footer a.flg{display:inline-flex;align-items:center;gap:6px;color:inherit}
 
 <section class="band" id="ex-integrantes"><div class="wrap">
 <h2>Ex-integrantes</h2>
-<p class="lead">Pós-graduandos e pós-doutorandos que se formaram no grupo. Alguns continuam conosco em outra etapa da carreira.</p>
-<div class="alum"><div><h3>Pós-doutorado</h3><ul><li>Lucas Vieira Lima <span>2025</span></li><li>Amabily Bohn <span>2025</span></li><li>Diogo Alexandre Siebert <span>2025</span></li><li>Kleber Renan de Souza Santos <span>2022</span></li></ul></div><div><h3>Doutorado</h3><ul><li>João Paulo de Maçaneiro <span>2019, Engenharia Florestal</span></li></ul></div><div><h3>Mestrado</h3><ul><li>Alana Ellen Ferreira da Silva <span>2026</span></li><li>Marcos Vinicius Vizioli Klaus <span>2025</span></li><li>Luran Monteiro Muzeka <span>2025</span></li><li>Gabriel Yan Rosa <span>2025</span></li><li>Giesta Maria Olmedo Machado <span>2022</span></li><li>Natália Deggau da Costa <span>2021</span></li><li>Fábio Fiamoncini Pastório <span>2019</span></li><li>Carlos Eduardo Schwartz <span>2019</span></li><li>Guilherme Salgado Grittz <span>2019</span></li><li>Renato Colares Pereira <span>2019, coorientação</span></li><li>Arthur Vinícius Rodrigues <span>2018</span></li><li>Karina Amarante Cavalheiro <span>2018</span></li></ul></div></div>
+<p class="lead">Pós-graduandos e pós-doutorandos que se formaram no grupo. Quem segue conosco em outra etapa aparece na equipe atual.</p>
+<div class="alum"><div><h3>Pós-doutorado</h3><ul><li>Lucas Vieira Lima <span>2025</span></li><li>Amabily Bohn <span>2025</span></li><li>Diogo Alexandre Siebert <span>2025</span></li><li>Kleber Renan de Souza Santos <span>2022</span></li></ul></div><div><h3>Doutorado</h3><ul><li>João Paulo de Maçaneiro <span>2019, Engenharia Florestal</span></li></ul></div><div><h3>Mestrado</h3><ul><li>Luran Monteiro Muzeka <span>2025</span></li><li>Natália Deggau da Costa <span>2021</span></li><li>Fábio Fiamoncini Pastório <span>2019</span></li><li>Carlos Eduardo Schwartz <span>2019</span></li><li>Renato Colares Pereira <span>2019, coorientação</span></li><li>Arthur Vinícius Rodrigues <span>2018</span></li><li>Karina Amarante Cavalheiro <span>2018</span></li></ul></div></div>
 </div></section>
 
 <section class="band" id="publicacoes"><div class="wrap">
@@ -336,7 +323,7 @@ footer a.flg{display:inline-flex;align-items:center;gap:6px;color:inherit}
 <div><h3 style="margin-bottom:6px">Artigos em destaque</h3><ul class="refs" id="hl"></ul>
 <div class="allpubs" style="margin-top:28px"><div><h3>Lista completa de publicações</h3><p>Todos os artigos, capítulos e livros, sempre atualizados, nos perfis do grupo.</p></div><div class="chips"><a href="http://lattes.cnpq.br/7964289151492195" target="_blank" rel="noopener">Currículo Lattes</a><a href="https://scholar.google.com.br/citations?user=FPXYzWkAAAAJ&hl=pt-BR" target="_blank" rel="noopener">Google Scholar</a><a href="https://orcid.org/0000-0002-1940-9581" target="_blank" rel="noopener">ORCID</a><a href="https://www.researchgate.net/profile/Andre-De-Gasper" target="_blank" rel="noopener">ResearchGate</a></div></div>
 </div>
-<div><h3 style="margin-bottom:6px">Livros</h3><ul class="refs" id="books2"></ul><h3 style="margin:22px 0 6px">Inventário Florístico Florestal de Santa Catarina</h3><ul class="refs" id="books"></ul>
+<div><h3 style="margin-bottom:6px">Livros</h3><ul class="refs" id="books2"></ul><h3 style="margin:22px 0 6px">Inventário Florístico Florestal de Santa Catarina</h3><ul class="refs" id="books"></ul><p style="margin-top:10px;font-size:15px"><a href="https://www.iff.sc.gov.br/nossas-a%C3%A7%C3%B5es/invent%C3%A1rio-florestal/publica%C3%A7%C3%B5es/livros" target="_blank" rel="noopener">Como solicitar os livros do Inventário →</a></p>
 <h3 style="margin:28px 0 6px">Na imprensa</h3><ul class="refs" id="press"></ul>
 
 </div>
@@ -354,7 +341,7 @@ footer a.flg{display:inline-flex;align-items:center;gap:6px;color:inherit}
 
 <section class="band join" id="junte-se"><div class="wrap">
 <div class="jtop"><div><h2>Junte-se ao grupo</h2>
-<p class="lead">Recebemos estudantes e pesquisadores do Brasil e do exterior interessados em samambaias, florestas tropicais e coleções biológicas.</p></div><img src="img/campo/licofito.jpg" alt="Licófita fotografada em campo" loading="lazy"></div>
+<p class="lead">Recebemos estudantes e pesquisadores do Brasil e do exterior interessados em samambaias, florestas tropicais e coleções biológicas.</p></div><figure class="jvid"><video autoplay muted loop playsinline preload="metadata" poster="img/campo/campo-sao-joaquim.jpg" aria-label="Trechos da saída de campo da disciplina de Biogeografia no Parque Nacional de São Joaquim (SC)"><source src="img/campo/campo-sao-joaquim.mp4" type="video/mp4"></video><figcaption>Saída de campo no Parque Nacional de São Joaquim (SC)</figcaption></figure></div>
 <div class="grid" style="margin-top:22px">
 <div class="card"><h3>Iniciação científica</h3><p>Estudantes de graduação da FURB podem participar dos projetos com bolsas de iniciação científica (CNPq, FAPESC e programas da FURB) ou como voluntários.</p></div>
 <div class="card"><h3>Mestrado e doutorado</h3><p>Orientação nos programas de pós-graduação da FURB em Biodiversidade (PPGBio), Ciências Ambientais (PPGCA) e Engenharia Florestal, com bolsas conforme os editais (CAPES, CNPq, FAPESC).</p></div>
@@ -394,7 +381,7 @@ footer a.flg{display:inline-flex;align-items:center;gap:6px;color:inherit}
 <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg></div><h3>Permuta e empréstimo</h3><p>Intercâmbio de exsicatas com herbários e instituições do país, mediante solicitação à curadoria.</p><a class="go" href="#contato">Falar com a curadoria →</a></div>
 <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M8 3c0 6 8 6 8 12s-8 6-8 6M16 3c0 6-8 6-8 12M9 7h6M9 17h6"/></svg></div><h3>Banco de DNA</h3><p>Folhas preservadas em sílica-gel e ligadas ao espécime de origem, disponíveis para extração e permuta. A planilha de amostras é atualizada constantemente.</p><a class="go" href="https://docs.google.com/spreadsheets/d/1FdL8GCqunhBtQ0pwR_j5s0FSPs9Yq2kPrRNoz5XRKBk" target="_blank" rel="noopener">Ver planilha do Banco de DNA →</a></div>
 <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><h3>Visitas</h3><p>Turmas, pesquisadores e público agendam a visita pelo formulário on-line.</p><a class="go" href="https://forms.gle/2EX2ehDDwNBMtuyQ6" target="_blank" rel="noopener">Agendar visita →</a></div>
-<div class="card"><div class="eqimgs"><img src="img/campo/microscopio.jpg" alt="Microscópio óptico Zeiss Primostar 3" loading="lazy"><img src="img/campo/estereomicroscopio.jpg" alt="Estereomicroscópio Zeiss Stemi 508 com câmera" loading="lazy"></div><h3>Equipamentos MultiLab SC</h3><p>Reserva dos equipamentos do laboratório. Depois de preencher, avise os responsáveis.</p><a class="go" href="https://forms.gle/7VR1YBo1QA7VKK8A6" target="_blank" rel="noopener">Reservar equipamento →</a></div>
+<div class="card" id="equipamentos"><div class="eqimgs"><img src="img/campo/microscopio.jpg" alt="Microscópio óptico Zeiss Primostar 3" loading="lazy"><img src="img/campo/estereomicroscopio.jpg" alt="Estereomicroscópio Zeiss Stemi 508 com câmera" loading="lazy"></div><h3>Equipamentos MultiLab SC</h3><p>Reserva dos equipamentos do laboratório. Depois de preencher, avise os responsáveis.</p><a class="go" href="https://forms.gle/7VR1YBo1QA7VKK8A6" target="_blank" rel="noopener">Reservar equipamento →</a></div>
 </div>
 <div class="redes">
 <div><h3>Acervo nas redes de dados</h3><p>Os registros do Herbário FURB e do FlorestaSC são abertos e podem ser consultados nestas plataformas.</p></div>
@@ -446,7 +433,8 @@ const team=[
 ];
 const ini=n=>{const w=n.split(' ');return (w[0][0]+w[w.length-1][0]).toUpperCase()};
 const slug=n=>n.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-');
-$('team').innerHTML=team.map(([g,ps])=>`<h3>${esc(g)}</h3>`+ps.map(([n,r,l,tp])=>`<div class="person"><div class="av">${esc(ini(n))}<img src="img/equipe/${slug(n)}.jpg" alt="Foto de ${esc(n)}" loading="lazy" onerror="this.remove()"></div><div>${l?`<a href="${esc(l)}" target="_blank" rel="noopener">${esc(n)}</a>`:`<b style="font-weight:600">${esc(n)}</b>`}<small>${esc(r)}</small>${tp?`<span class="tp">${tp}</span>`:""}</div></div>`).join('')).join('');
+const co=p=>/coorienta/i.test(p[1])?1:0;
+$('team').innerHTML=team.map(([g,ps])=>`<h3>${esc(g)}</h3>`+ps.slice().sort((a,b)=>co(a)-co(b)||a[0].localeCompare(b[0],'pt')).map(([n,r,l,tp,em])=>`<div class="person"><div class="av">${esc(ini(n))}<img src="img/equipe/${slug(n)}.jpg" alt="Foto de ${esc(n)}" loading="lazy" onerror="this.remove()"></div><div><b class="pn">${esc(n)}</b><small>${esc(r)}</small>${tp?`<span class="tp">${tp}</span>`:""}${(l||em)?`<span class="pbt">${l?`<a href="${esc(l)}" target="_blank" rel="noopener">Lattes</a>`:""}${em?`<a href="mailto:${esc(em)}">E-mail</a>`:""}</span>`:""}</div></div>`).join('')).join('');
 
 const doi=d=>d?` <a href="https://doi.org/${d}" target="_blank" rel="noopener">doi:${d}</a>`:'';
 /* Referências transcritas do site antigo (Google Sites); texto fixo deste arquivo, com nomes científicos em <i>. */
@@ -479,25 +467,8 @@ $('press').innerHTML=press.map(([t,v,l])=>`<li><a href="${esc(l)}" target="_blan
 
 const apoio=[["CNPq","cnpq.png"],["CAPES","capes.png"],["FINEP","finep.png"],["IMA/SC","ima-sc.png"],["Fundação Fritz Müller","fundacao-fritz-muller.png"],["INCT","inct.png"],["Serviço Florestal Brasileiro","servico-florestal-brasileiro.png"],["Inventário Florístico Florestal de Santa Catarina","florestasc.png"]];
 $('logos').innerHTML=apoio.map(([n,f])=>`<div class="logo-i ok"><img src="img/apoio/${f}" alt="${esc(n)}"></div>`).join('');
-const fr=$('frond');
-let s=7;const rnd=()=>(s=s*16807%2147483647)/2147483647;
-const x0=236,y0=560,top=70;
-const ax=t=>x0+Math.sin(t*2.4)*38*t, ay=t=>y0-(y0-top)*t;
-let g=`<path d="M${x0} ${y0+40} Q${x0+6} ${y0} ${ax(0)} ${ay(0)}" stroke="#5a4a2e" stroke-width="5" fill="none" stroke-linecap="round"/>`;
-let path=`M${ax(0)} ${ay(0)}`;
-for(let i=1;i<=40;i++){const t=i/40;path+=` L${ax(t).toFixed(1)} ${ay(t).toFixed(1)}`}
-for(let i=0;i<24;i++){
-const t=.06+i/24*.9,x=ax(t),y=ay(t);
-const len=135*Math.pow(Math.sin(Math.PI*Math.min(1,(1-t)*.95+.08)),.8)*(1-t*.5)+10;
-const w=Math.max(4,8.5-t*4.5);
-for(const d of [-1,1]){g+=`<ellipse cx="${(x+d*len/2).toFixed(1)}" cy="${y.toFixed(1)}" rx="${(len/2).toFixed(1)}" ry="${w.toFixed(1)}" fill="url(#pn)" transform="rotate(${(d*(-14+t*10)+(rnd()-.5)*4).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`}
 }
-g+=`<path d="${path}" stroke="#2a5a3a" stroke-width="3.5" fill="none" stroke-linecap="round"/>`;
-fr.innerHTML=g;
-let b='',bx=0;s=42;
-while(bx<160){const w=1+Math.floor(rnd()*3);b+=`<rect x="${bx}" y="0" width="${w}" height="20" fill="#14201a"/>`;bx+=w+1+Math.floor(rnd()*3)}
-$('bars').innerHTML=b;
-}
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video').forEach(v=>{v.removeAttribute('autoplay');v.pause()});
 </script>
 </body>
 </html>
