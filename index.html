@@ -128,22 +128,58 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 @media(max-width:600px){.links{width:100%;margin-left:0}.curator{grid-template-columns:minmax(0,1fr)}dl{grid-template-columns:minmax(0,1fr)}dt{margin-top:8px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}#frond{animation:none!important}}
 @keyframes sway{from{transform:rotate(-1.2deg)}to{transform:rotate(1.2deg)}}
+/* Proposta 2: grupo em verde-floresta, coleção em âmbar e papel de herbário */
+.links{align-items:center}
+.links .sep{flex:none;width:1px;height:22px;background:#ffffff33;margin:0 6px}
+.links a.ng{color:#b5e07a;font-weight:700}
+.links a.nc{color:#f2b544;font-weight:700}
+.doors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:clamp(28px,4vw,44px)}
+.door{display:flex;flex-direction:column;gap:6px;padding:22px 24px;border-radius:16px;text-decoration:none;transition:transform .15s}
+.door:hover{transform:translateY(-3px)}
+.dg{background:#165036;color:#fff;border:1px solid #ffffff26}
+.dc{background:#f2b544;color:#2a1c08}
+.dk{font:700 13px "Public Sans",sans-serif;opacity:.85}
+.dt{font:700 clamp(20px,2.2vw,26px)/1.15 Fraunces,Georgia,serif}
+.dn{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:10px}
+.dn>span{display:flex;flex-direction:column;font-size:14px}
+.dn b{font:700 clamp(24px,2.6vw,32px) Fraunces,Georgia,serif;white-space:nowrap}
+.dg .dn b{color:#b5e07a}
+.dgo{margin-top:8px;font-weight:700;font-size:15px}
+.part{padding:clamp(28px,4vw,52px) max(5vw,16px)}
+.part .wrap{display:grid;gap:6px}
+.part h2{font-size:clamp(34px,4.6vw,54px);margin:0}
+.part p{margin:0;font-size:17px}
+.pk{font-weight:700;font-size:14px}
+.pg{background:#165036;color:#fff}.pg .pk{color:#b5e07a}.pg p{color:#cfe3d6}
+.pc{background:#f2b544;color:#2a1c08}.pc p{color:#4a3413}
+.col{--bg:light-dark(#fbf6ea,#1b160e);--panel:light-dark(#f4ead3,#241d12);--deep:#5b3a10;--sprout:#f2b544;--leaf:light-dark(#9a5a0e,#f2b544);--line:light-dark(#e4d4b0,#3b2f1d);--muted:light-dark(#5e4e36,#c9b896);background:var(--bg)}
+.col .alt .card{background:light-dark(#fffdf7,#1b160e)}
+.col .ico{background:#5b3a10}
+.col .ico svg{stroke:#f2b544}
+.col .redes{background:#3d2709}
+.col .redes p,.col .rl span{color:#ecdcb8}
+.col .rl b{color:#f2b544}
+.col a{color:var(--leaf)}
+.col .rl a{color:#fff}
+.cbox{padding:22px;border-radius:14px;background:#ffffff10;border:1px solid #ffffff26}
+.cbox h3{margin-bottom:6px}
+@media(max-width:760px){.doors{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
 <nav aria-label="Principal"><div class="wrap">
 <a class="brand" href="#inicio">Laboratório Multiusuário Herbário FURB</a>
 <div class="links">
-<a href="#pesquisa">Pesquisa</a><a href="#herbario">Herbário</a><a href="#projetos">Projetos</a><a href="#equipe">Equipe</a><a href="#publicacoes">Publicações</a><a href="#apoio">Apoio</a><a href="#contato">Contato</a>
+<a class="ng" href="#grupo">Grupo de pesquisa</a><a href="#projetos">Projetos</a><a href="#equipe">Equipe</a><a href="#publicacoes">Publicações</a><span class="sep" aria-hidden="true"></span><a class="nc" href="#colecao">Coleção</a><a href="#servicos">Serviços</a><span class="sep" aria-hidden="true"></span><a href="#contato">Contato</a>
 </div></div></nav>
 
 <header class="hero band" id="inicio"><div class="wrap top">
 <div>
 <h1>Laboratório Multiusuário Herbário FURB</h1>
 <p class="sub">Botânica, coleções e florestas de Santa Catarina</p>
-<p>Grupo de pesquisa coordenado pelo Prof. André Luís de Gasper na Universidade Regional de Blumenau. O Herbário Dr. Roberto Miguel Klein é a nossa coleção e o nosso laboratório: aqui estudantes e pesquisadores trabalham com sistemática de licófitas e samambaias, ecologia de florestas tropicais e coleções biológicas.</p>
+<p>Na Universidade Regional de Blumenau, um mesmo espaço reúne duas coisas: a coleção botânica do Herbário Dr. Roberto Miguel Klein e o grupo de pesquisa coordenado pelo Prof. André Luís de Gasper, que estuda licófitas, samambaias e as florestas de Santa Catarina.</p>
 <div class="ctas">
-<a class="btn b1" href="#pesquisa">Conheça a pesquisa</a>
+<a class="btn b1" href="#grupo">Conheça o grupo</a>
 <a class="btn b2" href="https://furb.jbrj.gov.br/v2/consulta.php" target="_blank" rel="noopener">Consultar o acervo</a>
 </div>
 </div>
@@ -165,17 +201,18 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 </svg>
 </div>
 </div>
-<div class="wrap facts">
-<div><b id="idade">36 anos</b><span>de Herbário, desde 1990</span></div>
-<div><b>85 mil+</b><span>exsicatas no acervo</span></div>
-<div><b>103</b><span>artigos em periódicos</span></div>
-<div><b>73</b><span>estudantes orientados, da iniciação ao pós-doutorado</span></div>
+<div class="wrap doors">
+<a class="door dg" href="#grupo"><span class="dk">Grupo de pesquisa</span><span class="dt">Sistemática de samambaias e ecologia de florestas</span>
+<span class="dn"><span><b>103</b>artigos</span><span><b>73</b>orientados</span><span><b>9</b>projetos ativos</span></span><span class="dgo">Ver o grupo →</span></a>
+<a class="door dc" href="#colecao"><span class="dk">Coleção do Herbário</span><span class="dt">Coleção botânica aberta à pesquisa e à consulta</span>
+<span class="dn"><span><b id="idade">36 anos</b>de história</span><span><b>85 mil+</b>exsicatas</span><span><b>2014</b>Banco de DNA</span></span><span class="dgo">Ver a coleção →</span></a>
 </div>
 </header>
 
+<div class="part pg" id="grupo"><div class="wrap"><span class="pk">Parte 1</span><h2>Grupo de pesquisa</h2><p>Coordenado pelo Prof. André Luís de Gasper, com estudantes da iniciação científica ao pós-doutorado.</p></div></div>
 <section class="band" id="pesquisa"><div class="wrap">
 <h2>Linhas de pesquisa</h2>
-<p class="lead">Trabalhamos da coleta no campo à análise de dados, sempre com estudantes de iniciação científica, mestrado, doutorado e pós-doutorado.</p>
+<p class="lead">Da coleta no campo à análise de dados, com o acervo do Herbário como base.</p>
 <div class="grid" style="margin-top:22px">
 <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21V4M12 7c-3 0-5 1-6 3M12 7c3 0 5 1 6 3M12 11c-3 0-5 1-6 3M12 11c3 0 5 1 6 3M12 15c-2 0-4 1-5 2M12 15c2 0 4 1 5 2"/></svg></div><h3>Sistemática de licófitas e samambaias</h3><p>Taxonomia integrativa, filogenia, evolução e biogeografia de licófitas e samambaias, com dados moleculares, morfologia de esporos, citometria de fluxo e cariologia.</p></div>
 <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 20v-4M17 20v-6M7 16l-4-1 4-9 4 9zM17 14l-4-1 4-8 4 8z"/></svg></div><h3>Ecologia de florestas tropicais</h3><p>Estrutura, dinâmica e mortalidade das florestas, distribuição de espécies, padrões de diversidade e efeitos das mudanças climáticas, com os dados do FlorestaSC, que o grupo coordena.</p></div>
@@ -183,41 +220,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 </div>
 </div></section>
 
-<section class="band alt" id="herbario"><div class="wrap">
-<div class="two">
-<div>
-<h2>O Herbário, nossa coleção e laboratório</h2>
-<p class="lead">Criado em 1990, o Herbário leva o nome do botânico e ecólogo Roberto Miguel Klein, professor da FURB e grande estudioso da flora catarinense.</p>
-<p>Abriga coleções e estimula estudos sobre a flora do Parque Nacional da Serra do Itajaí, do Vale do Itajaí e de Santa Catarina. O acervo é climatizado e conta com biblioteca especializada. O espaço é também o laboratório do grupo, onde os estudantes processam material, fazem análises e desenvolvem suas pesquisas. É regido pela Resolução FURB nº 68/2014.</p>
-</div>
-<div>
-<h3 style="margin-bottom:8px">Infraestrutura</h3>
-<ul class="list">
-<li>Sala de coleção climatizada, sala de processamento e espaço para curadoria e análise de dados</li>
-<li>Duas estufas de secagem e casa de vegetação para plantas vivas</li>
-<li>Microscópio óptico e estereomicroscópio com câmera 4K</li>
-<li>Estação de fotografia em alta resolução e scanner para material-tipo</li>
-<li>Banco de DNA com folhas preservadas em sílica-gel, ligadas ao espécime de origem (<a href="https://docs.google.com/spreadsheets/d/1FdL8GCqunhBtQ0pwR_j5s0FSPs9Yq2kPrRNoz5XRKBk" target="_blank" rel="noopener">planilha de amostras</a>)</li>
-</ul>
-</div>
-</div>
-<div class="grid" style="margin-top:32px;grid-template-columns:repeat(auto-fit,minmax(min(100%,13em),1fr))">
-<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></div><h3>Consulta ao acervo</h3><p>Espécies e locais de coleta na base on-line, também nas redes speciesLink e SiBBr.</p><a class="go" href="https://furb.jbrj.gov.br/v2/consulta.php" target="_blank" rel="noopener">Abrir a base de dados →</a></div>
-<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg></div><h3>Permuta e empréstimo</h3><p>Intercâmbio de exsicatas com herbários e instituições do país, mediante solicitação à curadoria.</p><a class="go" href="#contato">Falar com a curadoria →</a></div>
-<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M8 3c0 6 8 6 8 12s-8 6-8 6M16 3c0 6-8 6-8 12M9 7h6M9 17h6"/></svg></div><h3>Banco de DNA</h3><p>Folhas preservadas em sílica-gel e ligadas ao espécime de origem, disponíveis para extração e permuta. A planilha de amostras é atualizada constantemente.</p><a class="go" href="https://docs.google.com/spreadsheets/d/1FdL8GCqunhBtQ0pwR_j5s0FSPs9Yq2kPrRNoz5XRKBk" target="_blank" rel="noopener">Ver planilha do Banco de DNA →</a></div>
-<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><h3>Visitas</h3><p>Turmas, pesquisadores e público agendam a visita pelo formulário on-line.</p><a class="go" href="https://forms.gle/2EX2ehDDwNBMtuyQ6" target="_blank" rel="noopener">Agendar visita →</a></div>
-<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/></svg></div><h3>Equipamentos MultiLab SC</h3><p>Reserva dos equipamentos do laboratório. Depois de preencher, avise os responsáveis.</p><a class="go" href="https://forms.gle/7VR1YBo1QA7VKK8A6" target="_blank" rel="noopener">Reservar equipamento →</a></div>
-</div>
-<div class="redes">
-<div><h3>Acervo nas redes de dados</h3><p>Os registros do Herbário FURB e do FlorestaSC são abertos e podem ser consultados nestas plataformas.</p></div>
-<div class="rl">
-<a href="https://furb.jbrj.gov.br/v2/consulta.php" target="_blank" rel="noopener"><b>JABOT</b><span>Base de dados do Herbário FURB, no sistema do Jardim Botânico do Rio de Janeiro</span></a>
-<a href="https://inct.splink.org.br" target="_blank" rel="noopener"><b>speciesLink</b><span>Rede de coleções biológicas do Brasil</span></a>
-<a href="https://www.sibbr.gov.br" target="_blank" rel="noopener"><b>SiBBr</b><span>Sistema de Informação sobre a Biodiversidade Brasileira</span></a>
-<a href="https://iff.sc.gov.br" target="_blank" rel="noopener"><b>FlorestaSC</b><span>Inventário Florístico Florestal de Santa Catarina</span></a>
-</div>
-</div>
-</div></section>
 
 <section class="band" id="projetos"><div class="wrap">
 <h2>Projetos</h2>
@@ -268,23 +270,64 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 
 
 
+<div class="col">
+<div class="part pc" id="colecao"><div class="wrap"><span class="pk">Parte 2</span><h2>Herbário Dr. Roberto Miguel Klein</h2><p>A coleção botânica da FURB, aberta à consulta, à permuta e à visitação.</p></div></div>
+<section class="band" id="herbario"><div class="wrap">
+<div class="two">
+<div>
+<h2>O acervo</h2>
+<p class="lead">Criado em 1990, o Herbário leva o nome do botânico e ecólogo Roberto Miguel Klein, professor da FURB e grande estudioso da flora catarinense.</p>
+<p>Abriga coleções e estimula estudos sobre a diversidade da flora. O acervo é climatizado e conta com biblioteca especializada. O mesmo espaço abriga o Laboratório Multiusuário, aberto a pesquisadores de outros grupos e instituições. É regido pela Resolução FURB nº 68/2014.</p>
+</div>
+<div>
+<h3 style="margin-bottom:8px">Infraestrutura</h3>
+<ul class="list">
+<li>Sala de coleção climatizada, sala de processamento e espaço para curadoria e análise de dados</li>
+<li>Duas estufas de secagem e casa de vegetação para plantas vivas</li>
+<li>Microscópio óptico e estereomicroscópio com câmera 4K</li>
+<li>Estação de fotografia em alta resolução e scanner para material-tipo</li>
+<li>Banco de DNA com folhas preservadas em sílica-gel, ligadas ao espécime de origem (<a href="https://docs.google.com/spreadsheets/d/1FdL8GCqunhBtQ0pwR_j5s0FSPs9Yq2kPrRNoz5XRKBk" target="_blank" rel="noopener">planilha de amostras</a>)</li>
+</ul>
+</div>
+</div>
+</div></section>
+<section class="band alt" id="servicos"><div class="wrap">
+<h2>Serviços da coleção</h2>
+<p class="lead">Para pesquisadores, estudantes, escolas e instituições.</p>
+<div class="grid" style="margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,13em),1fr))">
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></div><h3>Consulta ao acervo</h3><p>Espécies e locais de coleta na base on-line, também nas redes speciesLink e SiBBr.</p><a class="go" href="https://furb.jbrj.gov.br/v2/consulta.php" target="_blank" rel="noopener">Abrir a base de dados →</a></div>
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg></div><h3>Permuta e empréstimo</h3><p>Intercâmbio de exsicatas com herbários e instituições do país, mediante solicitação à curadoria.</p><a class="go" href="#contato">Falar com a curadoria →</a></div>
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M8 3c0 6 8 6 8 12s-8 6-8 6M16 3c0 6-8 6-8 12M9 7h6M9 17h6"/></svg></div><h3>Banco de DNA</h3><p>Folhas preservadas em sílica-gel e ligadas ao espécime de origem, disponíveis para extração e permuta. A planilha de amostras é atualizada constantemente.</p><a class="go" href="https://docs.google.com/spreadsheets/d/1FdL8GCqunhBtQ0pwR_j5s0FSPs9Yq2kPrRNoz5XRKBk" target="_blank" rel="noopener">Ver planilha do Banco de DNA →</a></div>
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><h3>Visitas</h3><p>Turmas, pesquisadores e público agendam a visita pelo formulário on-line.</p><a class="go" href="https://forms.gle/2EX2ehDDwNBMtuyQ6" target="_blank" rel="noopener">Agendar visita →</a></div>
+<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/></svg></div><h3>Equipamentos MultiLab SC</h3><p>Reserva dos equipamentos do laboratório. Depois de preencher, avise os responsáveis.</p><a class="go" href="https://forms.gle/7VR1YBo1QA7VKK8A6" target="_blank" rel="noopener">Reservar equipamento →</a></div>
+</div>
+<div class="redes">
+<div><h3>Acervo nas redes de dados</h3><p>Os registros do Herbário FURB e do FlorestaSC são abertos e podem ser consultados nestas plataformas.</p></div>
+<div class="rl">
+<a href="https://furb.jbrj.gov.br/v2/consulta.php" target="_blank" rel="noopener"><b>JABOT</b><span>Base de dados do Herbário FURB, no sistema do Jardim Botânico do Rio de Janeiro</span></a>
+<a href="https://inct.splink.org.br" target="_blank" rel="noopener"><b>speciesLink</b><span>Rede de coleções biológicas do Brasil</span></a>
+<a href="https://www.sibbr.gov.br" target="_blank" rel="noopener"><b>SiBBr</b><span>Sistema de Informação sobre a Biodiversidade Brasileira</span></a>
+<a href="https://iff.sc.gov.br" target="_blank" rel="noopener"><b>FlorestaSC</b><span>Inventário Florístico Florestal de Santa Catarina</span></a>
+</div>
+</div>
+</div></section>
+</div>
+
 <section class="band apoio" id="apoio"><div class="wrap">
 <h2 style="font-size:28px">Apoio e parcerias</h2>
 <img class="banner" src="img/apoio/multilab-fapesc-sc.jpg" alt="MultiLab SC, FAPESC e Governo de Santa Catarina, Secretaria da Ciência, Tecnologia e Inovação">
 <div class="logos" id="logos"></div>
 </div></section>
 
-<section class="band contact" id="contato"><div class="wrap two">
-<div>
+<section class="band contact" id="contato"><div class="wrap">
 <h2>Contato</h2>
-<p>Para consultas, permutas, empréstimos e amostras do Banco de DNA, escreva para a curadoria. Para orientação e parcerias de pesquisa, fale diretamente com o professor André.</p>
-<div class="ctas"><a class="btn b1" href="mailto:herbario@furb.br">herbario@furb.br</a><a class="btn b2" href="https://goo.gl/maps/sVa6yqYR5V7E36Ei9" target="_blank" rel="noopener">Ver no mapa</a></div>
+<div class="two" style="margin-top:18px">
+<div class="cbox"><h3>Curadoria do Herbário</h3><p>Consultas ao acervo, permutas, empréstimos, Banco de DNA e visitas.</p><div class="ctas" style="margin-top:14px"><a class="btn b1" style="background:#f2b544;color:#2a1c08" href="mailto:herbario@furb.br">herbario@furb.br</a></div></div>
+<div class="cbox"><h3>Grupo de pesquisa</h3><p>Orientação, estágios e parcerias de pesquisa com o Prof. André Luís de Gasper.</p><div class="ctas" style="margin-top:14px"><a class="btn b2" href="mailto:algasper@furb.br">algasper@furb.br</a></div></div>
 </div>
-<dl>
-<dt>Endereço</dt><dd>Rua Antônio da Veiga, 140, Victor Konder<br>Campus I, Bloco T, sala T-002<br>89030-903, Blumenau, SC</dd>
+<dl style="margin-top:28px">
+<dt>Endereço</dt><dd>Rua Antônio da Veiga, 140, Victor Konder · Campus I, Bloco T, sala T-002 · 89030-903, Blumenau, SC · <a href="https://goo.gl/maps/sVa6yqYR5V7E36Ei9" target="_blank" rel="noopener" style="color:#fff">ver no mapa</a></dd>
 <dt>Telefone</dt><dd style="white-space:nowrap">(47) 3321-0654</dd>
-<dt>E-mail</dt><dd>herbario@furb.br<br>algasper@furb.br</dd>
-<dt>Instituição</dt><dd>Universidade Regional de Blumenau (FURB)</dd>
 </dl>
 </div></section>
 
