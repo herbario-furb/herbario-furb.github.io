@@ -4,7 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Laboratório Multiusuário Herbário FURB</title>
-<meta name="description" content="Grupo de pesquisa do Prof. André Luís de Gasper e Herbário Dr. Roberto Miguel Klein (FURB): sistemática de samambaias, florestas de Santa Catarina, projetos, equipe e publicações.">
+<meta name="description" content="Laboratório Multiusuário Herbário FURB: grupo de pesquisa em sistemática de licófitas e samambaias, ecologia de florestas tropicais e coleções biológicas, e a coleção do Herbário Dr. Roberto Miguel Klein (FURB, Blumenau, Brasil).">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="alternate" hreflang="pt-BR" href="https://herbario-furb.github.io/">
+<link rel="alternate" hreflang="en" href="https://herbario-furb.github.io/en.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Laboratório Multiusuário Herbário FURB">
+<meta property="og:title" content="Laboratório Multiusuário Herbário FURB">
+<meta property="og:description" content="Grupo de pesquisa e coleção botânica da Universidade Regional de Blumenau: samambaias, florestas tropicais e coleções biológicas.">
+<meta property="og:image" content="https://herbario-furb.github.io/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -164,13 +173,46 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 .cbox{padding:22px;border-radius:14px;background:#ffffff10;border:1px solid #ffffff26}
 .cbox h3{margin-bottom:6px}
 @media(max-width:760px){.doors{grid-template-columns:minmax(0,1fr)}}
+
+/* v3 */
+.links a.lang{border:1px solid #ffffff55;margin-left:6px;font-weight:700}
+.news{background:var(--panel)}
+.nl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+.nl article{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:6px}
+.nl h3{font-size:19px}
+.nl p{margin:0;color:var(--muted);font-size:15px}
+.nl a{margin-top:auto;padding-top:6px;font-weight:700;color:var(--leaf);text-decoration:none}
+.nd{font-weight:700;font-size:13px;color:var(--leaf)}
+.intro2 .lead{max-width:80ch}
+.rq .q{font:500 18px/1.35 Fraunces,Georgia,serif;color:var(--ink)}
+.kp{font-weight:700;font-size:13px;color:var(--leaf);margin-top:6px}
+.kpl{margin:0;padding:0;list-style:none;font-size:14px;color:var(--muted)}
+.kpl li{padding:3px 0}
+.kpl a{color:var(--leaf);font-weight:700;text-decoration:none}
+.net{margin-top:22px;padding:18px 20px;border-radius:14px;border:1px dashed var(--line)}
+.net p{margin:4px 0 0;color:var(--muted)}
+.person .tp{display:block;font-size:14px;color:var(--ink);margin-top:2px;line-height:1.35}
+.alum{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:18px}
+.alum ul{margin:8px 0 0;padding:0;list-style:none}
+.alum li{padding:5px 0;border-bottom:1px solid var(--line);font-size:15px}
+.alum li span{color:var(--muted);font-size:13px;white-space:nowrap}
+.repos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+.repos a{display:flex;flex-direction:column;gap:4px;padding:16px 18px;border-radius:12px;background:var(--bg);border:1px solid var(--line);text-decoration:none}
+.repos b{color:var(--leaf);font-size:16px}
+.repos span{font-size:14px;color:var(--muted)}
+.repos em{font-style:normal;font-size:12px;font-weight:700;color:var(--muted);margin-top:auto}
+.more{font-weight:700;color:var(--leaf)}
+.howto{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;margin-top:22px;padding:22px 24px;border-radius:14px;background:#165036;color:#fff}
+.howto p{color:#cfe3d6;margin:6px 0 0}
+@media(max-width:980px){.nl,.repos{grid-template-columns:repeat(2,minmax(0,1fr))}.alum{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.nl,.repos,.alum{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
 <nav aria-label="Principal"><div class="wrap">
-<a class="brand" href="#inicio">Laboratório Multiusuário Herbário FURB</a>
+<a class="brand" href="#inicio">Herbário FURB</a>
 <div class="links">
-<a class="ng" href="#grupo">Grupo de pesquisa</a><a href="#projetos">Projetos</a><a href="#equipe">Equipe</a><a href="#publicacoes">Publicações</a><span class="sep" aria-hidden="true"></span><a class="nc" href="#colecao">Coleção</a><a href="#servicos">Serviços</a><span class="sep" aria-hidden="true"></span><a href="#contato">Contato</a>
+<a class="ng" href="#grupo">Grupo de pesquisa</a><a href="#projetos">Projetos</a><a href="#equipe">Equipe</a><a href="#publicacoes">Publicações</a><a href="#junte-se">Junte-se</a><span class="sep" aria-hidden="true"></span><a class="nc" href="#colecao">Coleção</a><a href="#servicos">Serviços</a><span class="sep" aria-hidden="true"></span><a href="#contato">Contato</a><a class="lang" href="en.html" hreflang="en" lang="en">EN</a>
 </div></div></nav>
 
 <header class="hero band" id="inicio"><div class="wrap top">
@@ -209,15 +251,23 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 </div>
 </header>
 
+<section class="band news" id="novidades"><div class="wrap">
+<h2>Novidades</h2>
+<div class="nl">
+<article><span class="nd">2026</span><h3>Diversificação das Gleicheniaceae nas montanhas tropicais</h3><p>Artigo no <i>Journal of Biogeography</i> mostra os sistemas montanhosos tropicais como berços de diversificação das samambaias da família.</p><a href="https://doi.org/10.1111/jbi.70286" target="_blank" rel="noopener">Ler o artigo →</a></article>
+<article><span class="nd">2026</span><h3>Nova espécie: <i>Parablechnum yariguense</i></h3><p>Samambaia endêmica da Serranía de los Yariguíes, na Colômbia, descrita na <i>Phytotaxa</i>.</p><a href="https://doi.org/10.11646/phytotaxa.756.2.5" target="_blank" rel="noopener">Ler o artigo →</a></article>
+<article><span class="nd">2026</span><h3>Rede para a adaptação climática da Floresta Atlântica</h3><p>Artigo em <i>Perspectives in Ecology and Conservation</i> defende uma rede de colaboração para entender o potencial de adaptação do <i>hotspot</i>.</p><a href="https://doi.org/10.1016/j.pecon.2026.03.003" target="_blank" rel="noopener">Ler o artigo →</a></article>
+<article><span class="nd">2026</span><h3>Observatório da vegetação do Brasil</h3><p>O grupo integra o novo projeto financiado pela FAPESP, que vai sintetizar dados de biodiversidade e estoques de carbono da vegetação brasileira.</p></article>
+<article><span class="nd">2026</span><h3>Presidência da Sociedade Botânica do Brasil</h3><p>O Prof. André Luís de Gasper foi eleito presidente da SBB para a gestão 2027–2030.</p></article>
+<article><span class="nd">2025</span><h3>FlorestaSC na <i>Forest Ecology and Management</i></h3><p>Artigo apresenta a abordagem do inventário para monitorar a biodiversidade em florestas hiperdiversas.</p><a href="https://doi.org/10.1016/j.foreco.2025.123204" target="_blank" rel="noopener">Ler o artigo →</a></article>
+</div>
+</div></section>
 <div class="part pg" id="grupo"><div class="wrap"><span class="pk">Parte 1</span><h2>Grupo de pesquisa</h2><p>Coordenado pelo Prof. André Luís de Gasper, com estudantes da iniciação científica ao pós-doutorado.</p></div></div>
 <section class="band" id="pesquisa"><div class="wrap">
-<h2>Linhas de pesquisa</h2>
-<p class="lead">Da coleta no campo à análise de dados, com o acervo do Herbário como base.</p>
-<div class="grid" style="margin-top:22px">
-<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21V4M12 7c-3 0-5 1-6 3M12 7c3 0 5 1 6 3M12 11c-3 0-5 1-6 3M12 11c3 0 5 1 6 3M12 15c-2 0-4 1-5 2M12 15c2 0 4 1 5 2"/></svg></div><h3>Sistemática de licófitas e samambaias</h3><p>Taxonomia integrativa, filogenia, evolução e biogeografia de licófitas e samambaias, com dados moleculares, morfologia de esporos, citometria de fluxo e cariologia.</p></div>
-<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 20v-4M17 20v-6M7 16l-4-1 4-9 4 9zM17 14l-4-1 4-8 4 8z"/></svg></div><h3>Ecologia de florestas tropicais</h3><p>Estrutura, dinâmica e mortalidade das florestas, distribuição de espécies, padrões de diversidade e efeitos das mudanças climáticas, com os dados do FlorestaSC, que o grupo coordena.</p></div>
-<div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div><h3>Coleções biológicas</h3><p>Curadoria, digitalização e uso dos dados de herbários brasileiros, incluindo o próprio Herbário FURB.</p></div>
-</div>
+<div class="intro2"><h2>Linhas de pesquisa</h2>
+<p class="lead">A Floresta Atlântica é um dos <i>hotspots</i> globais de biodiversidade: muito diversa, rica em espécies endêmicas e reduzida a fragmentos. Isso faz dela um laboratório natural para perguntas que valem para as florestas tropicais do mundo todo.</p></div>
+<div class="grid" style="margin-top:22px"><div class="card rq"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21V4M12 7c-3 0-5 1-6 3M12 7c3 0 5 1 6 3M12 11c-3 0-5 1-6 3M12 11c3 0 5 1 6 3M12 15c-2 0-4 1-5 2M12 15c2 0 4 1 5 2"/></svg></div><h3>Sistemática e evolução de licófitas e samambaias</h3><p class="q">Como surgem e como se delimitam as espécies de samambaias, e o que a história evolutiva delas revela sobre a diversificação das plantas nos trópicos?</p><p>Taxonomia integrativa, filogenia, biogeografia e evolução cromossômica, com dados moleculares, morfometria, esporos, citometria de fluxo e cariologia.</p><span class="kp">Artigos-chave</span><ul class="kpl"><li>PPG I 2016, <i>J. Syst. Evol.</i> <a href="https://doi.org/10.1111/jse.12229" target="_blank" rel="noopener">doi</a></li><li>Gasper et al. 2017, <i>Cladistics</i> <a href="https://doi.org/10.1111/cla.12173" target="_blank" rel="noopener">doi</a></li><li>Machado &amp; Gasper 2024, <i>Acta Bot. Bras.</i> <a href="https://doi.org/10.1590/1677-941x-abb-2023-0240" target="_blank" rel="noopener">doi</a></li><li>Lima et al. 2026, <i>J. Biogeogr.</i> <a href="https://doi.org/10.1111/jbi.70286" target="_blank" rel="noopener">doi</a></li></ul></div><div class="card rq"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 20v-4M17 20v-6M7 16l-4-1 4-9 4 9zM17 14l-4-1 4-8 4 8z"/></svg></div><h3>Ecologia de florestas tropicais</h3><p class="q">Como as florestas respondem ao clima e às pressões humanas, e o que isso significa para a biodiversidade e o carbono das florestas tropicais?</p><p>Estrutura, dinâmica, mortalidade e atributos funcionais das árvores, distribuição de espécies e mudanças climáticas, com os dados de longo prazo do FlorestaSC.</p><span class="kp">Artigos-chave</span><ul class="kpl"><li>Gasper et al. 2025, <i>For. Ecol. Manage.</i> <a href="https://doi.org/10.1016/j.foreco.2025.123204" target="_blank" rel="noopener">doi</a></li><li>Lima et al. 2024, <i>Science</i> <a href="https://doi.org/10.1126/science.abq5099" target="_blank" rel="noopener">doi</a></li><li>Gasper et al. 2021, <i>Perspect. Ecol. Conserv.</i> <a href="https://doi.org/10.1016/j.pecon.2021.03.007" target="_blank" rel="noopener">doi</a></li><li>Mo et al. 2023, <i>Nature</i> <a href="https://doi.org/10.1038/s41586-023-06723-z" target="_blank" rel="noopener">doi</a></li></ul></div><div class="card rq"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div><h3>Coleções biológicas</h3><p class="q">Como transformar coleções científicas em dados abertos e confiáveis para a pesquisa e a conservação?</p><p>Curadoria, digitalização, diagnóstico e políticas para as coleções biológicas brasileiras, a partir da experiência do Herbário FURB.</p><span class="kp">Artigos-chave</span><ul class="kpl"><li>Gasper et al. 2020, <i>Acta Bot. Bras.</i> <a href="https://doi.org/10.1590/010233062019abb0390" target="_blank" rel="noopener">doi</a></li><li>Gasper et al. 2021, <i>Acta Bot. Bras.</i> <a href="https://doi.org/10.1590/0102-33062020abb0246" target="_blank" rel="noopener">doi</a></li><li>Marinoni, Basílio &amp; Gasper (orgs.) 2024 <a href="https://doi.org/10.7476/9786587590066" target="_blank" rel="noopener">doi</a></li></ul></div></div>
+<div class="net"><span class="kp">Rede de colaboração</span><p>Pteridophyte Phylogeny Group (PPG) · Missouri Botanical Garden · Universidade de Cambridge · Global Forest Biodiversity Initiative (GFBI) · sPlot · Flora e Funga do Brasil · parceiros na Colômbia e em toda a América Latina</p></div>
 </div></section>
 
 
@@ -253,6 +303,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 <div class="team" id="team"></div>
 </div></section>
 
+<section class="band" id="ex-integrantes"><div class="wrap">
+<h2>Ex-integrantes</h2>
+<p class="lead">Pessoas que se formaram no grupo. Alguns continuam conosco em outra etapa da carreira.</p>
+<div class="alum"><div><h3>Pós-doutorado</h3><ul><li>Lucas Vieira Lima <span>2025</span></li><li>Amabily Bohn <span>2025</span></li><li>Diogo Alexandre Siebert <span>2025</span></li><li>Kleber Renan de Souza Santos <span>2022</span></li></ul></div><div><h3>Doutorado</h3><ul><li>João Paulo de Maçaneiro <span>2019, Engenharia Florestal</span></li></ul></div><div><h3>Mestrado</h3><ul><li>Alana Ellen Ferreira da Silva <span>2026</span></li><li>Marcos Vinicius Vizioli Klaus <span>2025</span></li><li>Luran Monteiro Muzeka <span>2025</span></li><li>Gabriel Yan Rosa <span>2025</span></li><li>Giesta Maria Olmedo Machado <span>2022</span></li><li>Natália Deggau da Costa <span>2021</span></li><li>Fábio Fiamoncini Pastório <span>2019</span></li><li>Carlos Eduardo Schwartz <span>2019</span></li><li>Guilherme Salgado Grittz <span>2019</span></li><li>Renato Colares Pereira <span>2019, coorientação</span></li><li>Arthur Vinícius Rodrigues <span>2018</span></li><li>Karina Amarante Cavalheiro <span>2018</span></li></ul></div><div><h3>Graduação e iniciação científica</h3><ul><li>Maria Eduarda Espezim da Silva <span>2024</span></li><li>Nathan César Censi <span>2023</span></li><li>Leonardo Honorato Reis e Silva <span>2023</span></li><li>Suyanne Brehmer de Oliveira <span>2023</span></li><li>Leticia Ruon Leandro <span>2021</span></li><li>Daniel Jaime Parma <span>2021</span></li><li>Astrid Huber de Souza <span>2020</span></li><li>Guilherme Buzzi <span>2019</span></li><li>Michele Pradella <span>2019</span></li><li>Álisson Schneiders <span>2018</span></li><li>Matheus Nicoletti Marascalchi <span>2018</span></li><li>William Gebien <span>2018</span></li><li>David Moura Farias <span>2018</span></li><li>Carlos Henrique Russi <span>2018</span></li><li>Lucas Gabriel Thom <span>2018</span></li><li>Fernanda Alves Lichtenfelz <span>2017</span></li><li>Fábio Leal Viana Bones <span>2017</span></li><li>Hanna Carolina Bloemer <span>2016</span></li><li>Mauricio Rodrigo Schmitt <span>2016</span></li><li>Amanda Cristina Blankenburg <span>2014</span></li><li>Gabrielli Melato <span>2014</span></li><li>Luís Adriano Funez <span>2013</span></li><li>Ana Carolina Mendes <span>2012</span></li></ul></div></div>
+</div></section>
+
 <section class="band" id="publicacoes"><div class="wrap">
 <h2>Publicações</h2>
 <p class="lead">Destaques recentes do grupo. A lista completa está no Lattes e no Google Scholar.</p>
@@ -269,6 +325,25 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 </div></section>
 
 
+
+<section class="band alt" id="dados"><div class="wrap">
+<h2>Dados e código</h2>
+<p class="lead">Ciência aberta: dados e scripts dos nossos estudos ficam públicos no GitHub do grupo.</p>
+<div class="repos"><a href="https://github.com/herbario-furb/treeferns" target="_blank" rel="noopener"><b>treeferns</b><span>Dados e código de “Expected impacts of climate change on tree ferns distribution and diversity patterns in subtropical Atlantic Forest” (Gasper et al. 2021).</span><em>R</em></a><a href="https://github.com/herbario-furb/mortality" target="_blank" rel="noopener"><b>mortality</b><span>Análises de mortalidade arbórea com dados do FlorestaSC.</span><em>R</em></a><a href="https://github.com/herbario-furb/austroblechnum" target="_blank" rel="noopener"><b>austroblechnum</b><span>Modelagem de distribuição de <i>Austroblechnum</i>.</span><em>R</em></a><a href="https://github.com/herbario-furb/coocur" target="_blank" rel="noopener"><b>coocur</b><span>Coocorrência de espécies arbóreas na Floresta Atlântica.</span></a><a href="https://github.com/herbario-furb/Parablechnum" target="_blank" rel="noopener"><b>Parablechnum</b><span>Dados do complexo <i>Parablechnum cordatum</i>.</span></a><a href="https://github.com/herbario-furb/Modelagem" target="_blank" rel="noopener"><b>Modelagem</b><span>Scripts de modelagem de distribuição de espécies.</span><em>R</em></a><a href="https://github.com/herbario-furb/Sobreposicao-de-nicho" target="_blank" rel="noopener"><b>Sobreposicao-de-nicho</b><span>Testes de sobreposição, equivalência e similaridade de nicho.</span><em>R</em></a><a href="https://github.com/herbario-furb/multivariada" target="_blank" rel="noopener"><b>multivariada</b><span>Scripts de análises multivariadas.</span><em>R</em></a><a href="https://github.com/herbario-furb/botanica" target="_blank" rel="noopener"><b>botanica</b><span>Scripts gerados pelos estudos do grupo.</span></a></div>
+<p style="margin-top:16px"><a class="more" href="https://github.com/herbario-furb" target="_blank" rel="noopener">Ver todos os repositórios em github.com/herbario-furb →</a></p>
+</div></section>
+
+<section class="band join" id="junte-se"><div class="wrap">
+<h2>Junte-se ao grupo</h2>
+<p class="lead">Recebemos estudantes e pesquisadores do Brasil e do exterior interessados em samambaias, florestas tropicais e coleções biológicas.</p>
+<div class="grid" style="margin-top:22px">
+<div class="card"><h3>Iniciação científica</h3><p>Estudantes de graduação da FURB podem participar dos projetos com bolsas de iniciação científica (CNPq, FAPESC e programas da FURB) ou como voluntários.</p></div>
+<div class="card"><h3>Mestrado e doutorado</h3><p>Orientação nos programas de pós-graduação da FURB em Biodiversidade (PPGBio), Ciências Ambientais (PPGCA) e Engenharia Florestal, com bolsas conforme os editais (CAPES, CNPq, FAPESC).</p></div>
+<div class="card"><h3>Pós-doutorado</h3><p>Propostas alinhadas às linhas do grupo, submetidas em conjunto a editais de bolsa de pós-doutorado.</p></div>
+<div class="card"><h3>Visitantes</h3><p>Pesquisadores e estudantes de outras instituições, inclusive do exterior, podem desenvolver projetos no Herbário e usar os equipamentos do Laboratório Multiusuário.</p></div>
+</div>
+<div class="howto"><div><h3>Como entrar em contato</h3><p>Escreva para o Prof. André com um breve currículo (Lattes ou CV), algumas linhas sobre o que você gostaria de pesquisar e o programa ou a bolsa que pretende buscar.</p></div><a class="btn b1" href="mailto:algasper@furb.br?subject=Interesse%20em%20integrar%20o%20grupo">algasper@furb.br</a></div>
+</div></section>
 
 <div class="col">
 <div class="part pc" id="colecao"><div class="wrap"><span class="pk">Parte 2</span><h2>Herbário Dr. Roberto Miguel Klein</h2><p>A coleção botânica da FURB, aberta à consulta, à permuta e à visitação.</p></div></div>
@@ -342,14 +417,14 @@ const $=id=>document.getElementById(id);
 $('idade').textContent=(new Date().getFullYear()-1990)+' anos';
 
 const team=[
-["Pós-doutorado",[["Thiago Caique Alves","PPGBio","http://lattes.cnpq.br/1327513923808130"],["Vanessa Lino de Lima","PPGCA","http://lattes.cnpq.br/7631663804888798"]]],
-["Pesquisadores e doutorandos",[["Giesta Maria Olmedo Machado","Pesquisadora do FlorestaSC","http://lattes.cnpq.br/3304402365400220"],["Alana Ellen Ferreira da Silva","Doutoranda, PPGCA",""],["Iasmin Tassi Grott","Doutoranda, PPGCA, coorientação","http://lattes.cnpq.br/4375298105906955"],["Marcos Vinicius Vizioli Klaus","Doutorando, PPGCA","https://lattes.cnpq.br/3563943236491073"],["Gabriel Yan Rosa","Doutorando, PPGCA","http://lattes.cnpq.br/1277601159053724"],["Guilherme Salgado Grittz","Doutorando, Recursos Florestais (USP), coorientação","http://lattes.cnpq.br/0412205452545975"]]],
-["Mestrado",[["Douglas Dickmann","PPGCA","http://lattes.cnpq.br/8425931952581501"],["Guilherme Werner Baenteli","PPGBio","http://lattes.cnpq.br/8968641170213817"],["Mariana Hartmann Karkow","PPGBio","https://lattes.cnpq.br/6614370535272623"],["Laís Machado Tavares de Camargo","PPGBio",""]]],
-["Graduação e apoio técnico",[["Luan Luiz da Silva","Iniciação científica (CNPq)",""],["Priscila Kuchenbecker","Monitora de Botânica e Ecologia","http://lattes.cnpq.br/9586570289135864"],["Marina Briese Gonçalves","Técnica de laboratório","http://lattes.cnpq.br/7053600269498320"]]]
+["Pós-doutorado",[["Thiago Caique Alves","Pós-doutorado, PPGBio (FAPESC)","http://lattes.cnpq.br/1327513923808130",""],["Vanessa Lino de Lima","Pós-doutorado, PPGCA (FAPESC)","http://lattes.cnpq.br/7631663804888798",""]]],
+["Doutorado",[["Giesta Maria Olmedo Machado","Doutoranda, PPGCA · pesquisadora do FlorestaSC","http://lattes.cnpq.br/3304402365400220","Processos ecológicos e evolutivos na diversificação de <i>Parablechnum</i>"],["Alana Ellen Ferreira da Silva","Doutoranda, PPGCA","","Limites da Floresta Atlântica: ecótonos com modelagem florística e lógica <i>fuzzy</i>"],["Marcos Vinicius Vizioli Klaus","Doutorando, PPGCA","https://lattes.cnpq.br/3563943236491073","Mudanças climáticas, conservação e tecnologias para identificar plantas para a restauração"],["Gabriel Yan Rosa","Doutorando, PPGCA","http://lattes.cnpq.br/1277601159053724","Gradientes ecológicos e dinâmica temporal da Floresta Atlântica"],["Iasmin Tassi Grott","Doutoranda, PPGCA · coorientação","http://lattes.cnpq.br/4375298105906955","Impacto das mudanças climáticas em samambaias da Floresta Atlântica subtropical"],["Guilherme Salgado Grittz","Doutorando, Recursos Florestais (USP) · coorientação","http://lattes.cnpq.br/0412205452545975","Endemismo, risco de extinção e singularidade evolutiva da flora arbórea da América tropical"]]],
+["Mestrado",[["Douglas Dickmann","Mestrando, PPG Engenharia Florestal","http://lattes.cnpq.br/8425931952581501","Atributos funcionais e coocorrência de espécies na Floresta Atlântica"],["Guilherme Werner Baenteli","Mestrando, PPGBio","http://lattes.cnpq.br/8968641170213817","Compostos fenólicos e corpos silicosos em Blechnaceae"],["Mariana Hartmann Karkow","Mestranda, PPGBio","https://lattes.cnpq.br/6614370535272623","Citogenética de uma potencial espécie híbrida em Blechnaceae"],["Laís Machado Tavares de Camargo","Mestranda, PPGBio","","Estudos moleculares em <i>Microgramma</i>"]]],
+["Graduação e apoio técnico",[["Luan Luiz da Silva","Iniciação científica (CNPq)","","Anatomia de <i>Austroblechnum</i> (Blechnaceae)"],["Priscila Kuchenbecker","Monitora de Botânica e Ecologia","http://lattes.cnpq.br/9586570289135864",""],["Marina Briese Gonçalves","Técnica de laboratório","http://lattes.cnpq.br/7053600269498320",""]]]
 ];
 const ini=n=>{const w=n.split(' ');return (w[0][0]+w[w.length-1][0]).toUpperCase()};
 const slug=n=>n.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-');
-$('team').innerHTML=team.map(([g,ps])=>`<h3>${esc(g)}</h3>`+ps.map(([n,r,l])=>`<div class="person"><div class="av">${esc(ini(n))}<img src="img/equipe/${slug(n)}.jpg" alt="Foto de ${esc(n)}" loading="lazy" onerror="this.remove()"></div><div>${l?`<a href="${esc(l)}" target="_blank" rel="noopener">${esc(n)}</a>`:`<b style="font-weight:600">${esc(n)}</b>`}<small>${esc(r)}</small></div></div>`).join('')).join('');
+$('team').innerHTML=team.map(([g,ps])=>`<h3>${esc(g)}</h3>`+ps.map(([n,r,l,tp])=>`<div class="person"><div class="av">${esc(ini(n))}<img src="img/equipe/${slug(n)}.jpg" alt="Foto de ${esc(n)}" loading="lazy" onerror="this.remove()"></div><div>${l?`<a href="${esc(l)}" target="_blank" rel="noopener">${esc(n)}</a>`:`<b style="font-weight:600">${esc(n)}</b>`}<small>${esc(r)}</small>${tp?`<span class="tp">${tp}</span>`:""}</div></div>`).join('')).join('');
 
 const doi=d=>d?` <a href="https://doi.org/${d}" target="_blank" rel="noopener">doi:${d}</a>`:'';
 /* Referências transcritas do site antigo (Google Sites); texto fixo deste arquivo, com nomes científicos em <i>. */
